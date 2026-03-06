@@ -9,6 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
+  <!-- MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2167859');
+  </script>
+  <!-- End MailerLite Universal -->
+
   <style>
     :root {
       --charcoal: #181818;
@@ -22,7 +32,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -34,7 +43,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── UTILITY ── */
     .container {
       max-width: 780px;
       margin: 0 auto;
@@ -48,18 +56,16 @@
       margin-bottom: 32px;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       padding: 28px 0;
       border-bottom: 1px solid rgba(191,160,84,0.15);
     }
-
     nav .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .wordmark {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
@@ -69,7 +75,6 @@
       color: var(--gold);
       text-decoration: none;
     }
-
     .wordmark span {
       color: var(--stone-light);
       font-weight: 400;
@@ -79,12 +84,11 @@
       font-style: italic;
     }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       padding: 96px 0 80px;
       position: relative;
     }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -92,7 +96,6 @@
       background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(191,160,84,0.05) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .eyebrow {
       font-family: 'DM Sans', sans-serif;
       font-size: 0.72rem;
@@ -105,7 +108,6 @@
       align-items: center;
       gap: 12px;
     }
-
     .eyebrow::before {
       content: '';
       display: inline-block;
@@ -114,7 +116,6 @@
       background: var(--gold);
       flex-shrink: 0;
     }
-
     h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.6rem, 6vw, 4.2rem);
@@ -124,11 +125,7 @@
       margin-bottom: 12px;
       letter-spacing: -0.01em;
     }
-
-    h1 em {
-      color: var(--gold);
-      font-style: italic;
-    }
+    h1 em { color: var(--gold); font-style: italic; }
 
     .hero-sub {
       font-size: 1.1rem;
@@ -138,6 +135,7 @@
       line-height: 1.6;
     }
 
+    /* DATE BAR */
     .date-bar {
       display: inline-flex;
       align-items: center;
@@ -148,33 +146,30 @@
       padding: 14px 24px;
       margin-bottom: 40px;
     }
-
     .date-bar .date-item {
       display: flex;
       flex-direction: column;
       gap: 2px;
     }
-
     .date-item .label {
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--stone);
     }
-
     .date-item .value {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.05rem;
       font-weight: 500;
       color: var(--white);
     }
-
     .date-divider {
       width: 1px;
       height: 28px;
       background: rgba(191,160,84,0.2);
     }
 
+    /* CTA BUTTONS */
     .cta-primary {
       display: inline-block;
       background: var(--gold);
@@ -189,12 +184,30 @@
       border-radius: 3px;
       transition: background 0.2s ease, transform 0.15s ease;
     }
-
     .cta-primary:hover {
       background: var(--gold-light);
       transform: translateY(-1px);
     }
-
+    .cta-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 3px;
+      border: 1px solid rgba(191,160,84,0.4);
+      transition: border-color 0.2s ease, transform 0.15s ease;
+      margin-left: 16px;
+    }
+    .cta-secondary:hover {
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
     .cta-note {
       font-size: 0.78rem;
       color: var(--stone);
@@ -202,12 +215,27 @@
       letter-spacing: 0.02em;
     }
 
-    /* ── SECTION BASE ── */
+    /* CTA WRAP */
+    .cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .cta-secondary {
+      margin-left: 0;
+    }
+
+    /* SECTIONS */
     section {
       padding: 72px 0;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
-
     h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -217,22 +245,16 @@
       margin-bottom: 20px;
       letter-spacing: -0.01em;
     }
-
-    h2 em {
-      color: var(--gold);
-      font-style: italic;
-    }
-
+    h2 em { color: var(--gold); font-style: italic; }
     p {
       color: var(--stone-light);
       font-size: 1rem;
       line-height: 1.75;
       margin-bottom: 18px;
     }
-
     p:last-child { margin-bottom: 0; }
 
-    /* ── OUTCOMES ── */
+    /* OUTCOMES */
     .outcomes-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -243,7 +265,6 @@
       overflow: hidden;
       margin-top: 40px;
     }
-
     .outcome-item {
       background: var(--charcoal-soft);
       padding: 28px 32px;
@@ -252,11 +273,7 @@
       align-items: flex-start;
       transition: background 0.2s;
     }
-
-    .outcome-item:hover {
-      background: var(--charcoal-mid);
-    }
-
+    .outcome-item:hover { background: var(--charcoal-mid); }
     .outcome-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem;
@@ -267,13 +284,11 @@
       padding-top: 2px;
       min-width: 32px;
     }
-
     .outcome-text {
       font-size: 0.95rem;
       color: var(--white);
       line-height: 1.6;
     }
-
     .outcome-text strong {
       display: block;
       font-weight: 500;
@@ -284,14 +299,13 @@
       font-style: italic;
     }
 
-    /* ── FOR YOU ── */
+    /* FOR YOU */
     .for-you-list {
       margin-top: 32px;
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
-
     .for-you-item {
       display: flex;
       align-items: flex-start;
@@ -300,7 +314,6 @@
       color: var(--stone-light);
       line-height: 1.6;
     }
-
     .for-you-item::before {
       content: '';
       display: inline-block;
@@ -312,7 +325,7 @@
       margin-top: 9px;
     }
 
-    /* ── ABOUT ── */
+    /* ABOUT */
     .about-block {
       background: var(--charcoal-soft);
       border: 1px solid rgba(191,160,84,0.12);
@@ -320,7 +333,6 @@
       padding: 40px;
       margin-top: 40px;
     }
-
     .about-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem;
@@ -328,7 +340,6 @@
       color: var(--gold);
       margin-bottom: 4px;
     }
-
     .about-title {
       font-size: 0.78rem;
       letter-spacing: 0.1em;
@@ -337,28 +348,59 @@
       margin-bottom: 24px;
     }
 
-    /* ── BOTTOM CTA ── */
+    /* WAITLIST SECTION */
+    .waitlist-section {
+      padding: 72px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .waitlist-block {
+      background: var(--charcoal-soft);
+      border: 1px solid rgba(191,160,84,0.2);
+      border-radius: 4px;
+      padding: 48px 40px;
+      margin-top: 40px;
+    }
+    .waitlist-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .waitlist-block h3 em { color: var(--gold); font-style: italic; }
+    .waitlist-block p {
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+
+    /* MailerLite form overrides to match brand */
+    .ml-embedded {
+      --ml-bg: transparent !important;
+    }
+    .ml-embedded .ml-form-embedWrapper {
+      background: transparent !important;
+    }
+
+    /* BOTTOM CTA */
     .bottom-cta {
       text-align: center;
       padding: 96px 0;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
-
-    .bottom-cta h2 {
-      margin-bottom: 16px;
-    }
-
+    .bottom-cta h2 { margin-bottom: 16px; }
     .bottom-cta p {
       max-width: 480px;
       margin: 0 auto 40px;
     }
+    .bottom-cta .cta-buttons {
+      justify-content: center;
+    }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
       padding: 28px 0;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
-
     footer .container {
       display: flex;
       align-items: center;
@@ -366,18 +408,15 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .footer-text {
       font-size: 0.78rem;
       color: var(--stone);
       letter-spacing: 0.03em;
     }
-
     .footer-text a {
       color: var(--stone-light);
       text-decoration: none;
     }
-
     .footer-scripture {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.82rem;
@@ -385,19 +424,18 @@
       font-style: italic;
     }
 
-    /* ── ANIMATIONS ── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
     .hero .eyebrow  { animation: fadeUp 0.6s ease both; }
     .hero h1        { animation: fadeUp 0.6s 0.1s ease both; }
     .hero .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
     .hero .date-bar { animation: fadeUp 0.6s 0.3s ease both; }
     .hero .cta-wrap { animation: fadeUp 0.6s 0.4s ease both; }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 600px) {
       .date-bar {
         flex-direction: column;
@@ -407,6 +445,8 @@
       .date-divider { display: none; }
       footer .container { flex-direction: column; }
       .about-block { padding: 28px 24px; }
+      .waitlist-block { padding: 32px 24px; }
+      .cta-secondary { margin-left: 0; }
     }
   </style>
 </head>
@@ -416,7 +456,7 @@
   <nav>
     <div class="container">
       <a href="#" class="wordmark">CLEARED <span>· by Strategic Health Group LLC</span></a>
-      <a href="#register" class="cta-primary" style="padding: 10px 24px; font-size: 0.75rem;">Reserve Your Spot</a>
+      <a href="https://us06web.zoom.us/meeting/register/FX0LZGFCQ-ud-zaIYFQglA" target="_blank" class="cta-primary" style="padding: 10px 24px; font-size: 0.75rem;">Register Free</a>
     </div>
   </nav>
 
@@ -438,6 +478,11 @@
         </div>
         <div class="date-divider"></div>
         <div class="date-item">
+          <span class="label">Time</span>
+          <span class="value">1:00 PM Mountain</span>
+        </div>
+        <div class="date-divider"></div>
+        <div class="date-item">
           <span class="label">Format</span>
           <span class="value">Live · Zoom</span>
         </div>
@@ -449,9 +494,11 @@
       </div>
 
       <div class="cta-wrap" id="register">
-        <!-- REPLACE href WITH YOUR CALENDLY LINK -->
-        <a href="https://calendly.com/coachmariap/cleared-ai-workflow-audit" target="_blank" class="cta-primary">Book Your AI Workflow Audit</a>
-        <p class="cta-note">March 20th session is at capacity. Book a 1:1 AI Workflow Audit directly.</p>
+        <div class="cta-buttons">
+          <a href="https://us06web.zoom.us/meeting/register/FX0LZGFCQ-ud-zaIYFQglA" target="_blank" class="cta-primary">Reserve Your Spot</a>
+          <a href="#waitlist" class="cta-secondary">Can't Make It? Join the List</a>
+        </div>
+        <p class="cta-note">Free. One hour. Built for practitioners, not beginners.</p>
       </div>
     </div>
   </div>
@@ -528,14 +575,30 @@
     </div>
   </section>
 
+  <!-- WAITLIST / EMAIL CAPTURE -->
+  <div class="waitlist-section" id="waitlist">
+    <div class="container">
+      <div class="rule"></div>
+      <h2>Can't make <em>March 20th?</em></h2>
+      <div class="waitlist-block">
+        <h3>Get notified when the <em>next session opens</em></h3>
+        <p>Join the CLEARED list. You'll be the first to know when the next session is scheduled — and first access to the AI Workflow Audit.</p>
+        <!-- MailerLite Embedded Form -->
+        <div class="ml-embedded" data-form="vP8dMS"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- BOTTOM CTA -->
   <div class="bottom-cta">
     <div class="container">
       <h2>One hour. <em>March 20th.</em><br>Free.</h2>
       <p>Your clients trust your judgment. This is how you protect it.</p>
-      <!-- REPLACE href WITH YOUR CALENDLY LINK -->
-      <a href="https://calendly.com/coachmariap/cleared-ai-workflow-audit" target="_blank" class="cta-primary">Book Your AI Workflow Audit</a>
-      <p class="cta-note" style="margin-top: 14px;">March 20th session is at capacity. Book a 1:1 directly.</p>
+      <div class="cta-buttons">
+        <a href="https://us06web.zoom.us/meeting/register/FX0LZGFCQ-ud-zaIYFQglA" target="_blank" class="cta-primary">Reserve Your Spot</a>
+        <a href="#waitlist" class="cta-secondary">Join the Waitlist</a>
+      </div>
+      <p class="cta-note" style="margin-top: 14px;">Free. One hour. Built for practitioners, not beginners.</p>
     </div>
   </div>
 
@@ -544,7 +607,7 @@
     <div class="container">
       <p class="footer-text">
         &copy; 2026 Strategic Health Group LLC · 
-        <a href="mailto:hello@getreal.health">hello@getreal.health</a>
+        <a href="mailto:maria@getshgllc.com">maria@getshgllc.com</a>
       </p>
       <p class="footer-scripture">Get wisdom. Get understanding. — Prov 4:5</p>
     </div>
