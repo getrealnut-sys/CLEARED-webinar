@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLEARED Assessment — Know Exactly Where You Stand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --charcoal: #181818;
+      --gold: #BFA054;
+      --white: #F8F6F2;
+      --stone: #7A7670;
+      --green-zone: #3D6B4F;
+      --yellow-zone: #8B7635;
+      --red-zone: #7A3030;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1px solid rgba(191,160,84,0.2);
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-wordmark {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .brand-rule { height: 1px; background: var(--gold); width: 100%; margin: 3px 0; }
+    .brand-sub {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: 8px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .header-tag {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 96px 48px 80px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: block;
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      animation: fadeUp 0.6s 0.1s both;
+    }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(56px, 9vw, 86px);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 36px;
+      animation: fadeUp 0.6s 0.2s both;
+    }
+    .hero h1 span {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 0.88em;
+      color: var(--gold);
+      text-transform: none;
+      letter-spacing: 0.01em;
+    }
+    .hero-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(19px, 2.5vw, 24px);
+      color: rgba(248,246,242,0.72);
+      line-height: 1.55;
+      max-width: 620px;
+      margin: 0 auto 52px;
+      animation: fadeUp 0.6s 0.3s both;
+    }
+    .gold-rule { width: 56px; height: 1px; background: var(--gold); margin: 0 auto 48px; animation: fadeUp 0.6s 0.35s both; }
+    .price-display {
+      margin-bottom: 40px;
+      animation: fadeUp 0.6s 0.4s both;
+    }
+    .price-display .amount {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .price-display .label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: 6px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 20px 56px;
+      transition: background 0.2s, color 0.2s;
+      animation: fadeUp 0.6s 0.5s both;
+      margin-bottom: 14px;
+    }
+    .btn-primary:hover { background: var(--white); }
+    .btn-note {
+      display: block;
+      font-size: 11px;
+      color: var(--stone);
+      letter-spacing: 0.06em;
+      animation: fadeUp 0.6s 0.55s both;
+    }
+
+    /* SECTIONS */
+    .divider { border: none; border-top: 1px solid rgba(191,160,84,0.12); }
+    section { padding: 80px 48px; }
+    .inner { max-width: 900px; margin: 0 auto; }
+
+    .s-label {
+      display: block;
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+    .s-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(34px, 5vw, 52px);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 40px;
+    }
+
+    /* PROBLEM */
+    .problem-section { background: transparent; }
+    .pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(22px, 3.5vw, 32px);
+      line-height: 1.45;
+      border-left: 2px solid var(--gold);
+      padding-left: 32px;
+      margin-bottom: 48px;
+      color: var(--white);
+    }
+    .prose p { font-size: 15px; line-height: 1.9; color: rgba(248,246,242,0.72); max-width: 700px; }
+    .prose p + p { margin-top: 20px; }
+
+    /* ZONES */
+    .zones-section { background: rgba(248,246,242,0.025); border-top: 1px solid rgba(191,160,84,0.1); border-bottom: 1px solid rgba(191,160,84,0.1); }
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .zone {
+      padding: 40px 30px;
+    }
+    .zone.g { border-top: 3px solid #5DAF7C; background: rgba(61,107,79,0.12); }
+    .zone.y { border-top: 3px solid var(--gold); background: rgba(139,118,53,0.12); }
+    .zone.r { border-top: 3px solid #C05C5C; background: rgba(122,48,48,0.12); }
+    .zone-dot {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .zone.g .zone-dot { color: #5DAF7C; }
+    .zone.y .zone-dot { color: var(--gold); }
+    .zone.r .zone-dot { color: #C05C5C; }
+    .zone-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .zone p { font-size: 13px; line-height: 1.7; color: rgba(248,246,242,0.6); }
+
+    /* DELIVERABLES */
+    .deliv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px 64px;
+      margin-top: 48px;
+    }
+    .deliv-item { border-top: 1px solid rgba(191,160,84,0.22); padding-top: 28px; }
+    .deliv-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: rgba(191,160,84,0.25);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .deliv-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .deliv-item p { font-size: 13px; line-height: 1.75; color: var(--stone); }
+
+    /* FOR WHO */
+    .forwho-section { border-top: 1px solid rgba(191,160,84,0.1); }
+    .forwho-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .check-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 14px; line-height: 1.65; color: rgba(248,246,242,0.78);
+    }
+    .check-list li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--gold); border-radius: 50%;
+      margin-top: 9px; flex-shrink: 0;
+    }
+
+    /* ABOUT */
+    .about-section { background: rgba(248,246,242,0.02); border-top: 1px solid rgba(191,160,84,0.1); }
+    .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .about-hed {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin-top: 16px;
+    }
+    .about-hed em { color: var(--gold); font-style: italic; }
+    .about-body p { font-size: 15px; line-height: 1.9; color: rgba(248,246,242,0.7); }
+    .about-body p + p { margin-top: 18px; }
+    .about-body strong { color: var(--white); font-weight: 500; }
+
+    /* FINAL CTA */
+    .final-section { text-align: center; padding: 100px 48px; }
+    .urgency-pill {
+      display: inline-block;
+      border: 1px solid rgba(191,160,84,0.25);
+      background: rgba(191,160,84,0.06);
+      padding: 12px 28px;
+      margin-bottom: 48px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .final-hed {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(44px, 7vw, 72px);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 0.95;
+      margin-bottom: 24px;
+    }
+    .final-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 20px;
+      color: rgba(248,246,242,0.6);
+      margin-bottom: 48px;
+      max-width: 460px;
+      margin-left: auto; margin-right: auto;
+    }
+    .contact-note { display: block; margin-top: 18px; font-size: 11px; color: var(--stone); letter-spacing: 0.08em; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(191,160,84,0.12);
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer span { font-size: 10px; color: rgba(122,118,112,0.65); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      header, section, .final-section, footer { padding-left: 24px; padding-right: 24px; }
+      .zones-grid, .deliv-grid, .forwho-grid, .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="brand-wordmark">CLEARED</div>
+    <div class="brand-rule"></div>
+    <div class="brand-sub">AI Practitioner Program &middot; by SHG LLC</div>
+  </div>
+  <span class="header-tag">The Assessment</span>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">CLEARED: AI Practitioner Assessment</span>
+  <h1>Know exactly<br/><span>where you stand.</span></h1>
+  <p class="hero-body">
+    You're already using AI in your practice. This assessment tells you which parts are working, which parts need a guardrail, and which parts carry real risk — before something goes wrong.
+  </p>
+  <div class="gold-rule"></div>
+  <div class="price-display">
+    <span class="amount">$97</span>
+    <span class="label">One-time &nbsp;&middot;&nbsp; Written feedback delivered within 72 hours</span>
+  </div>
+  <a href="https://buy.stripe.com/aFa28rfyEdpT90M8dx5Ne00" class="btn-primary">Begin Your Assessment</a>
+  <span class="btn-note">You'll receive a brief questionnaire immediately after payment.</span>
+</section>
+
+<hr class="divider" />
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="inner">
+    <span class="s-label">Why This Exists</span>
+    <blockquote class="pull-quote">
+      "I'm using AI in my practice and I honestly don't know if I'm doing it right."
+    </blockquote>
+    <div class="prose">
+      <p>That's the internal monologue most practitioners won't say out loud. You use a tool to help draft a client summary, or you publish AI-assisted content, and there's a low-level discomfort you can't quite name. Not because you're doing anything overtly wrong. Because nobody gave you a framework for what "right" looks like in a clinical context.</p>
+      <p>The problem isn't that you're using AI. It's that you're using it without a classification system — without knowing which workflows carry real liability exposure and which ones are completely fine. That's not ignorance. That's just the gap nobody's filling.</p>
+      <p>This assessment fills it. You answer a focused set of questions about how you're currently using AI. Within 72 hours, you receive a written analysis organized by risk zone, specific to your practice, written by Maria — not generated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ZONES -->
+<section class="zones-section">
+  <div class="inner">
+    <span class="s-label">The Framework</span>
+    <div class="s-title">The Red / Yellow /<br/>Green Model</div>
+    <div class="zones-grid">
+      <div class="zone g">
+        <span class="zone-dot">&#9679; &nbsp;Green Zone</span>
+        <div class="zone-name">Cleared for Use</div>
+        <p>Minimal clinical risk. AI is functioning as an efficiency tool without touching the decision layer. Most practitioners are already in green zones they don't recognize — and that confidence matters.</p>
+      </div>
+      <div class="zone y">
+        <span class="zone-dot">&#9679; &nbsp;Yellow Zone</span>
+        <div class="zone-name">Proceed With Guardrails</div>
+        <p>Real value, real risk if unmanaged. These workflows need a human authority filter — a defined oversight step before anything reaches a client. The guardrail is often simpler than you expect.</p>
+      </div>
+      <div class="zone r">
+        <span class="zone-dot">&#9679; &nbsp;Red Zone</span>
+        <div class="zone-name">Pause and Redesign</div>
+        <p>Liability exposure, scope-of-practice risk, or clinical quality concerns. This isn't a judgment — it's a flag. Most practitioners have one or two red zone habits they've normalized. This is where the assessment earns its price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section>
+  <div class="inner">
+    <span class="s-label">What You Receive</span>
+    <div class="s-title">Four things.<br/>No filler.</div>
+    <div class="deliv-grid">
+      <div class="deliv-item">
+        <div class="deliv-num">01</div>
+        <div class="deliv-title">Zone Classification</div>
+        <p>Every AI workflow you're currently using, classified as Green, Yellow, or Red — with the reasoning behind each classification written in plain language.</p>
+      </div>
+      <div class="deliv-item">
+        <div class="deliv-num">02</div>
+        <div class="deliv-title">Your Risk Profile</div>
+        <p>A written summary of where your practice sits on the risk spectrum right now, and what that means for your clients, your credibility, and your scope of practice.</p>
+      </div>
+      <div class="deliv-item">
+        <div class="deliv-num">03</div>
+        <div class="deliv-title">Priority Actions</div>
+        <p>The two or three things that matter most, in order. Not a 20-point checklist — the specific adjustments that move you out of exposure and into confidence.</p>
+      </div>
+      <div class="deliv-item">
+        <div class="deliv-num">04</div>
+        <div class="deliv-title">Written by Maria. Not AI.</div>
+        <p>Your assessment is written by hand, specific to your answers. No templates. No generated output. The analysis is what you're paying for — not the framework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="forwho-section">
+  <div class="inner">
+    <div class="forwho-grid">
+      <div>
+        <span class="s-label">Right For You If</span>
+        <div class="s-title" style="margin-bottom:0;">You recognize<br/>yourself here.</div>
+      </div>
+      <ul class="check-list">
+        <li>You're a health coach, integrative practitioner, or allied health professional already using AI tools — even casually.</li>
+        <li>You've wondered, even once, whether your AI use is appropriate for your scope of practice.</li>
+        <li>You've published AI-assisted content and felt a discomfort you couldn't name.</li>
+        <li>You want a second set of eyes from someone with 13 years of enterprise data systems experience and clinical practice credentials — not just AI enthusiasm.</li>
+        <li>You'd rather know where you stand now than find out the hard way later.</li>
+        <li>You're not ready for a full audit yet, but you want to understand what you're working with before you invest more.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="inner">
+    <div class="about-grid">
+      <div>
+        <span class="s-label">About Maria</span>
+        <div class="about-hed">The analyst<br/>behind the<br/><em>assessment.</em></div>
+      </div>
+      <div class="about-body">
+        <p>Maria Castro spent 13 years as a data analyst and quality manager in enterprise technology — building system integrations, managing workflow architecture, and finding the failure points that organizations couldn't see until something broke. She was trained to find the signal in complex systems before the problem became visible.</p>
+        <p>She then became an integrative health practitioner. When AI started entering clinical spaces, she recognized the pattern immediately: practitioners adopting powerful tools without governance frameworks, the same way enterprise systems got integrated without quality management. <strong>The same failures. A different domain.</strong></p>
+        <p>CLEARED exists because that gap needed someone who could speak both languages — practitioner and systems analyst — fluently. The Red/Yellow/Green model is a clinical quality classification system built for practitioners, by one.</p>
+        <p>The assessment you receive will be written by Maria personally, specific to your answers, delivered within 72 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-section">
+  <div class="urgency-pill">Current rate: $97 &nbsp;&middot;&nbsp; Full audit rate increases May 1, 2026</div>
+  <div class="final-hed">Start with<br/>clarity.</div>
+  <p class="final-sub">You don't have to overhaul anything. You just need to know where you actually stand.</p>
+  <a href="https://buy.stripe.com/aFa28rfyEdpT90M8dx5Ne00" class="btn-primary">Begin Your Assessment — $97</a>
+  <span class="contact-note">Questions? Reach Maria at maria@getshgllc.com</span>
+</section>
+
+<footer>
+  <span>&copy; 2026 Strategic Health Group, LLC. All rights reserved.</span>
+  <span>CLEARED: AI Practitioner Program &middot; by SHG LLC</span>
+</footer>
+
+</body>
+</html>
