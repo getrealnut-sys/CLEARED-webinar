@@ -1,1 +1,467 @@
-getrealnut-sys.github.io/CLEARED-webinar/cleared-assessment/thank-you/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Confirmed — CLEARED Assessment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e2c97e;
+      --bg: #0e0e0e;
+      --surface: #161616;
+      --surface-2: #1e1e1e;
+      --text: #e8e4dc;
+      --text-muted: #8a8478;
+      --border: rgba(201,168,76,0.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Karla', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* subtle grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    header {
+      padding: 28px 40px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .wordmark-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .divider-dot {
+      color: var(--border);
+      font-size: 0.6rem;
+      margin: 0 2px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 80px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .confirm-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 40px;
+      padding: 8px 20px;
+      margin-bottom: 48px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .confirm-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .confirm-badge span {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 640px;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .steps-container {
+      width: 100%;
+      max-width: 680px;
+      margin: 64px 0 0;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+
+    .steps-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 0 20px;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    .step:not(:last-child) .step-line {
+      display: block;
+    }
+
+    .step-number-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--gold);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      display: none;
+      width: 1px;
+      flex: 1;
+      background: var(--border);
+      margin: 6px 0;
+      min-height: 32px;
+    }
+
+    .step-content {
+      padding-bottom: 40px;
+    }
+
+    .step-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 8px;
+      padding-top: 10px;
+    }
+
+    .step-content p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .step-content p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* CTA block */
+    .cta-block {
+      width: 100%;
+      max-width: 680px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 44px 48px;
+      text-align: center;
+      margin-top: 8px;
+      animation: fadeUp 0.7s ease 0.3s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .cta-block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .cta-block p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: #0e0e0e;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 40px;
+      border-radius: 2px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-note {
+      display: block;
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* delivery promise bar */
+    .promise-bar {
+      width: 100%;
+      max-width: 680px;
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
+
+    .promise-item {
+      background: var(--surface);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .promise-item .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .promise-item .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--gold-light);
+    }
+
+    /* email fallback */
+    .fallback {
+      margin-top: 40px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+      animation: fadeUp 0.7s ease 0.5s both;
+    }
+
+    .fallback a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 1px;
+    }
+
+    footer {
+      padding: 28px 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 20px 20px; }
+      main { padding: 56px 20px 60px; }
+      .cta-block { padding: 32px 24px; }
+      .promise-bar { grid-template-columns: 1fr; }
+      .promise-item:not(:last-child) { border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <div class="wordmark">CLEARED</div>
+      <div class="wordmark-sub">AI Practitioner Program <span class="divider-dot">·</span> by SHG LLC</div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="confirm-badge">
+      <div class="dot"></div>
+      <span>Payment confirmed</span>
+    </div>
+
+    <div class="hero">
+      <h1>Your assessment<br>is <em>reserved.</em></h1>
+      <p>Payment received. One thing stands between you and your written analysis: the questionnaire below. It takes about ten minutes. Your assessment cannot be written without it.</p>
+    </div>
+
+    <div class="steps-container">
+      <div class="steps-label">What happens next</div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>Complete the questionnaire</h3>
+          <p>Click the button below. Twelve focused questions about your practice and your current AI use. <strong>Be specific — the quality of your assessment depends entirely on the detail you provide here.</strong> This is the diagnostic, not a signup form.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <h3>Maria reviews your answers</h3>
+          <p>Your responses go directly to Maria. She reviews them personally. No template. No AI-generated output. The analysis is written by hand, specific to what you submitted.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number-col">
+          <div class="step-num">3</div>
+        </div>
+        <div class="step-content">
+          <h3>Your written assessment arrives</h3>
+          <p>Within <strong>48 hours</strong> of receiving your completed questionnaire, your assessment is delivered to your inbox. Zone classification for every workflow you listed. Your risk profile. Priority actions. Written specifically for your practice.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <h2>Complete your questionnaire now.</h2>
+      <p>The 48-hour window starts when your form is submitted — not when you paid. Don't leave this page without completing it.</p>
+      <a href="QUESTIONNAIRE_LINK_HERE" class="btn-primary">Begin Questionnaire</a>
+      <span class="btn-note">Takes approximately 10 minutes &nbsp;·&nbsp; Opens in this window</span>
+    </div>
+
+    <div class="promise-bar">
+      <div class="promise-item">
+        <div class="label">Delivery window</div>
+        <div class="value">48 hours</div>
+      </div>
+      <div class="promise-item">
+        <div class="label">Written by</div>
+        <div class="value">Maria, personally</div>
+      </div>
+      <div class="promise-item">
+        <div class="label">Delivered to</div>
+        <div class="value">Your inbox</div>
+      </div>
+    </div>
+
+    <p class="fallback">
+      Questions? Email <a href="mailto:maria@getshgllc.com">maria@getshgllc.com</a><br>
+      If you were redirected here by mistake, your Stripe receipt confirms payment.
+    </p>
+
+  </main>
+
+  <footer>
+    © 2026 Strategic Health Group, LLC. All rights reserved. &nbsp;·&nbsp; CLEARED: AI Practitioner Program
+  </footer>
+
+</body>
+</html>
