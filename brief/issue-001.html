@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issue 001 | The CLEARED Intelligence Brief</title>
+  <meta name="description" content="FDA oversight gaps, HHS AI adoption push, state-level disclosure laws, and Joint Commission certification preview. Issue 001, April 7, 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --charcoal: #181818;
+      --charcoal-soft: #1F1F1F;
+      --charcoal-mid: #252525;
+      --gold: #BFA054;
+      --gold-light: #d4b46a;
+      --gold-dim: rgba(191, 160, 84, 0.15);
+      --gold-mid: rgba(191, 160, 84, 0.35);
+      --cream: #F8F6F2;
+      --stone: #7A7670;
+      --stone-light: #9a9490;
+      --border: rgba(191, 160, 84, 0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--charcoal);
+      color: var(--cream);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ──────────────────────────── NAV ──────────────────────────── */
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 10;
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-wordmark {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .nav-wordmark-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+    .nav-wordmark-sub {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-back {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--stone-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ──────────────────────────── ISSUE HEADER ──────────────────────────── */
+    .issue-header {
+      padding: 72px 0 48px;
+    }
+
+    .eyebrow {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    h1 .gold { color: var(--gold); }
+
+    .issue-meta {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .issue-intro {
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .issue-intro p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--stone-light);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ──────────────────────────── BRIEF CONTENT ──────────────────────────── */
+    .brief-body {
+      padding-bottom: 72px;
+    }
+
+    .signal-block {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+    }
+    .signal-block:last-of-type {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .signal-label {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.55rem;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      color: var(--cream);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .signal-body {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.97rem;
+      color: var(--cream);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .signal-takeaway {
+      background: var(--gold-dim);
+      border-left: 2px solid var(--gold);
+      padding: 16px 20px;
+      border-radius: 0 2px 2px 0;
+    }
+    .signal-takeaway-label {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .signal-takeaway p {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.93rem;
+      color: var(--cream);
+      line-height: 1.7;
+    }
+
+    /* Pattern + Action sections */
+    .pattern-section, .action-section {
+      padding: 48px 0;
+    }
+    .pattern-section {
+      border-top: 1px solid var(--border);
+    }
+
+    h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .pattern-body, .action-body {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.97rem;
+      color: var(--cream);
+      line-height: 1.8;
+    }
+
+    /* ──────────────────────────── DIVIDER ──────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ──────────────────────────── CTA BLOCK ──────────────────────────── */
+    .cta-block {
+      padding: 56px 0;
+      text-align: center;
+    }
+    .cta-block-inner {
+      background: var(--charcoal-soft);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 44px 40px;
+    }
+    .cta-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .cta-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--stone-light);
+      margin-bottom: 28px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 2px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    /* ──────────────────────────── NAV BOTTOM ──────────────────────────── */
+    .back-nav {
+      padding: 24px 0 48px;
+    }
+    .back-link {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--stone-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gold); }
+
+    /* ──────────────────────────── FOOTER ──────────────────────────── */
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-text {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.75rem;
+      color: var(--stone);
+      letter-spacing: 0.03em;
+    }
+    .footer-text a {
+      color: var(--stone-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-text a:hover { color: var(--gold); }
+    .footer-scripture {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      color: rgba(191,160,84,0.4);
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .cta-block-inner { padding: 32px 24px; }
+      footer .container { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════ NAV ════════════════════════════ -->
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="nav-wordmark">
+        <span class="nav-wordmark-text">CLEARED</span>
+        <span class="nav-wordmark-sub">AI Practitioner Program</span>
+      </a>
+      <a href="./index.html" class="nav-back">&larr; All Issues</a>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════ ISSUE HEADER ════════════════════════════ -->
+  <header class="issue-header">
+    <div class="container">
+      <p class="eyebrow">Intelligence Brief</p>
+      <h1>The <span class="gold">CLEARED</span><br>Intelligence Brief</h1>
+      <p class="issue-meta">Issue 001 &nbsp;|&nbsp; April 7, 2026</p>
+      <div class="issue-intro">
+        <p>What happened this week in AI and health practice governance.</p>
+        <p>What it means for your practice.</p>
+        <p>What to do about it.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════ BRIEF CONTENT ════════════════════════════ -->
+  <main class="brief-body">
+    <div class="container">
+
+      <!-- Signal 1 -->
+      <div class="signal-block">
+        <p class="signal-label">Signal 1</p>
+        <h2>Penn Medicine Faculty Call Out "Holes" in FDA's AI Device Oversight</h2>
+        <p class="signal-body">Penn Medicine researchers published findings that the FDA's current approval pathways were built for traditional medical devices and don't map well to AI. The 510(k) pathway, which approves roughly 98% of AI-enabled devices, requires less rigorous evidence than newer processes. More concerning: after deployment, AI systems experience "drift," where performance degrades over time and varies between clinical sites. There is no infrastructure to catch this once a tool is in use.</p>
+        <div class="signal-takeaway">
+          <p class="signal-takeaway-label">What this means for you</p>
+          <p>If you are using any AI-enabled clinical tool, the regulatory body that cleared it may not be monitoring whether it still works the way it did on approval day. That is your governance gap to fill, not the FDA's.</p>
+        </div>
+      </div>
+
+      <!-- Signal 2 -->
+      <div class="signal-block">
+        <p class="signal-label">Signal 2</p>
+        <h2>HHS Requests Public Input on AI to "Deflate Health Care Costs"</h2>
+        <p class="signal-body">The U.S. Department of Health and Human Services published a formal Request for Information seeking input on how HHS can accelerate AI adoption in clinical care. The framing is cost reduction. The administration is actively looking for use cases and is signaling that it wants fewer barriers to AI deployment, not more.</p>
+        <div class="signal-takeaway">
+          <p class="signal-takeaway-label">What this means for you</p>
+          <p>Federal policy is moving toward encouraging AI adoption, not restricting it. That means the compliance burden is shifting to practitioners. You will be expected to have your own governance process before regulators come asking.</p>
+        </div>
+      </div>
+
+      <!-- Signal 3 -->
+      <div class="signal-block">
+        <p class="signal-label">Signal 3</p>
+        <h2>States Are Writing the AI Rules the Federal Government Won't</h2>
+        <p class="signal-body">With no comprehensive federal AI legislation, states are filling the gap fast. Texas now requires written patient disclosure before any AI-assisted treatment (effective January 2026). California's AB 489 prohibits AI systems from implying they hold a healthcare license. Georgia's SB 444 bans insurance coverage decisions based solely on AI. Alabama has SB 63 targeting AI in health plan coverage determinations.</p>
+        <div class="signal-takeaway">
+          <p class="signal-takeaway-label">What this means for you</p>
+          <p>If you practice across state lines, or your clients do, the rules are already different depending on where you are. A disclosure process that works in one state may not satisfy another. This is where most practitioners will get caught.</p>
+        </div>
+      </div>
+
+      <!-- Signal 4 -->
+      <div class="signal-block">
+        <p class="signal-label">Signal 4</p>
+        <h2>Joint Commission and CHAI Preparing Voluntary AI Certification Program</h2>
+        <p class="signal-body">The Joint Commission, in partnership with the Coalition for Health AI (CHAI), is developing a voluntary AI certification program expected to launch in 2026. They have already released governance playbooks covering seven core areas: executive oversight, regulatory compliance, ethical alignment, IT infrastructure, cybersecurity, safety protocols, and clinical department integration.</p>
+        <div class="signal-takeaway">
+          <p class="signal-takeaway-label">What this means for you</p>
+          <p>"Voluntary" today becomes "expected" within 18 months. If you build your governance framework now using these seven areas as a scaffold, you will not be scrambling when certification becomes the standard your referral partners and payers expect.</p>
+        </div>
+      </div>
+
+      <!-- The Pattern -->
+      <div class="pattern-section">
+        <h3>The Pattern</h3>
+        <p class="pattern-body">The federal government is pushing AI adoption while pulling back on oversight. States are writing their own rules. Accrediting bodies are building certification programs. The message is consistent even if the approach is fragmented: the practitioner who is using AI without a documented governance process is the one who will be exposed first. Not because AI is dangerous. Because the question "what is your process?" is about to become mandatory, and most practices do not have an answer.</p>
+      </div>
+
+      <!-- One Thing -->
+      <div class="action-section">
+        <h3>One Thing You Can Do This Week</h3>
+        <p class="action-body">Open a blank document. Write down every AI tool you use in your practice, client-facing or not. For each one, answer three questions: (1) What data does it touch? (2) Who approved its use? (3) What happens if it gives a wrong answer? If you cannot answer all three for every tool, that is your starting point. That document is the beginning of your AI governance framework.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <div class="divider"></div>
+
+  <!-- ════════════════════════════ CTA BLOCK ════════════════════════════ -->
+  <section class="cta-block">
+    <div class="container">
+      <div class="cta-block-inner">
+        <p class="cta-heading">Get this in your inbox every Monday.</p>
+        <p class="cta-sub">Signal tracking for practitioners who are paying attention.</p>
+        <a href="LINKEDIN_NEWSLETTER_URL" class="cta-btn">Subscribe via LinkedIn Newsletter &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ BACK NAV ════════════════════════════ -->
+  <div class="back-nav">
+    <div class="container">
+      <a href="./index.html" class="back-link">&larr; All Issues</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">
+        &copy; 2026 Strategic Health Group, LLC &middot;
+        <a href="mailto:support@getshgllc.com">support@getshgllc.com</a>
+      </p>
+      <p class="footer-scripture">Get wisdom. Get understanding. &mdash; Prov 4:5</p>
+    </div>
+  </footer>
+
+</body>
+</html>
