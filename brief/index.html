@@ -255,6 +255,12 @@
       background: var(--gold-dim);
       color: var(--gold-light);
     }
+    .archive-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-end;
+    }
 
     .archive-empty {
       font-family: 'Cormorant Garamond', serif;
@@ -299,8 +305,9 @@
       .archive-item {
         grid-template-columns: 1fr;
       }
-      .archive-link {
+      .archive-link, .archive-links {
         justify-self: start;
+        align-items: flex-start;
       }
       footer .container { flex-direction: column; align-items: flex-start; }
     }
@@ -341,7 +348,9 @@
             <p class="archive-meta">Issue 001, April 7, 2026</p>
             <p class="archive-description">FDA oversight gaps, HHS AI adoption push, state-level disclosure laws, and Joint Commission certification preview.</p>
           </div>
-          <a href="./issue-001.html" class="archive-link">Read issue &rarr;</a>
+          <div class="archive-links">
+            <a href="./issue-001.html" class="archive-link">Read issue &rarr;</a>
+          </div>
         </li>
 
       </ul>
