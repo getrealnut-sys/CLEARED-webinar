@@ -109,74 +109,17 @@
       transform: translateY(-1px);
     }
 
-    /* ──────────────────────────── HERO ──────────────────────────── */
-    .hero {
-      padding: 88px 0 72px;
+    /* ──────────────────────────── CURRENT ISSUE ──────────────────────────── */
+    .current-section {
+      padding: 56px 0 48px;
       position: relative;
     }
-    .hero::before {
+    .current-section::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(191,160,84,0.04) 0%, transparent 70%);
       pointer-events: none;
-    }
-
-    .eyebrow {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2.4rem, 6vw, 3.8rem);
-      line-height: 1.05;
-      text-transform: uppercase;
-      color: var(--cream);
-      margin-bottom: 24px;
-      letter-spacing: 0.02em;
-    }
-    h1 .gold { color: var(--gold); }
-
-    .hero-sub {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--stone-light);
-      margin-bottom: 20px;
-      max-width: 600px;
-      line-height: 1.65;
-      font-style: italic;
-    }
-
-    .hero-body {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.95rem;
-      color: var(--stone-light);
-      max-width: 580px;
-      line-height: 1.75;
-    }
-
-    /* ──────────────────────────── ARCHIVE ──────────────────────────── */
-    .archive-section {
-      padding: 56px 0 80px;
     }
 
     .section-label {
@@ -198,6 +141,70 @@
       background: var(--border);
     }
 
+    .current-issue-card {
+      border: 1px solid var(--gold-mid);
+      border-radius: 3px;
+      padding: 40px 44px;
+      background: rgba(191, 160, 84, 0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .current-issue-meta {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .current-issue-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+
+    .current-issue-description {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--stone-light);
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    .current-issue-cta {
+      display: inline-block;
+      margin-top: 8px;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 2px;
+      align-self: flex-start;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .current-issue-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    /* ──────────────────────────── ARCHIVE ──────────────────────────── */
+    .archive-section {
+      padding: 40px 0 80px;
+    }
+
     .archive-list {
       list-style: none;
       display: flex;
@@ -212,7 +219,6 @@
       grid-template-columns: 1fr auto;
       gap: 16px 32px;
       align-items: center;
-      transition: background 0.15s;
     }
     .archive-item:last-child {
       border-bottom: 1px solid var(--border);
@@ -255,12 +261,6 @@
       background: var(--gold-dim);
       color: var(--gold-light);
     }
-    .archive-links {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: flex-end;
-    }
 
     .archive-empty {
       font-family: 'Cormorant Garamond', serif;
@@ -302,13 +302,9 @@
     }
 
     @media (max-width: 600px) {
-      .archive-item {
-        grid-template-columns: 1fr;
-      }
-      .archive-link, .archive-links {
-        justify-self: start;
-        align-items: flex-start;
-      }
+      .current-issue-card { padding: 28px 24px; }
+      .archive-item { grid-template-columns: 1fr; }
+      .archive-link { justify-self: start; }
       footer .container { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -326,13 +322,20 @@
     </div>
   </nav>
 
-  <!-- ════════════════════════════ HERO ════════════════════════════ -->
-  <section class="hero">
+  <!-- ════════════════════════════ CURRENT ISSUE ════════════════════════════ -->
+  <section class="current-section">
     <div class="container">
-      <p class="eyebrow">Intelligence Brief</p>
-      <h1>The <span class="gold">CLEARED</span><br>Intelligence Brief</h1>
-      <p class="hero-sub">Weekly signal tracking for integrative health practitioners navigating AI in clinical practice.</p>
-      <p class="hero-body">Each issue covers three to five real AI and health governance developments, a pattern analysis, and one actionable step. No hype. No vendor promotion. Published every Monday.</p>
+      <p class="section-label">Current Issue</p>
+
+      <!-- CURRENT-ISSUE-BLOCK -->
+      <div class="current-issue-card">
+        <p class="current-issue-meta">Issue 002 &middot; April 7, 2026</p>
+        <h1 class="current-issue-title">The CLEARED<br>Intelligence Brief</h1>
+        <p class="current-issue-description">FDA oversight gaps, HHS AI adoption push, state-level disclosure laws, and Joint Commission certification preview.</p>
+        <a href="./issue-002.html" class="current-issue-cta">Read Issue 002 &rarr;</a>
+      </div>
+      <!-- /CURRENT-ISSUE-BLOCK -->
+
     </div>
   </section>
 
@@ -342,27 +345,13 @@
       <p class="section-label">Previous Issues</p>
       <ul class="archive-list" id="archive-list">
 
-        <!-- Issue 002 -->
-        <li class="archive-item">
-          <div>
-            <p class="archive-meta">Issue 002, April 7, 2026</p>
-            <p class="archive-description">FDA oversight gaps, HHS AI adoption push, state-level disclosure laws, and Joint Commission certification preview.</p>
-          </div>
-          <div class="archive-links">
-            <a href="./issue-002.html" class="archive-link">Read issue &rarr;</a>
-            <a href="https://www.linkedin.com/pulse/cleared-intelligence-brief-issue-002-maria-castro-8gs8c/" class="archive-link" target="_blank">LinkedIn &rarr;</a>
-          </div>
-        </li>
-
         <!-- Issue 001 -->
         <li class="archive-item">
           <div>
-            <p class="archive-meta">Issue 001, April 1, 2026</p>
+            <p class="archive-meta">Issue 001 &middot; April 1, 2026</p>
             <p class="archive-description">Hospital CEO ready to replace radiologists with AI, FDA relaxes oversight, WHO mental health warning, and Penn State liability research.</p>
           </div>
-          <div class="archive-links">
-            <a href="./issue-001.html" class="archive-link">Read issue &rarr;</a>
-          </div>
+          <a href="./issue-001.html" class="archive-link">Read issue &rarr;</a>
         </li>
 
       </ul>
