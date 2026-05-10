@@ -700,6 +700,114 @@
       .path-card { padding: 32px 24px; }
       footer .container { flex-direction: column; align-items: flex-start; }
     }
+
+    /* ──────────────────────────── LADDER BLOCK ──────────────────────────── */
+    .ladder-block {
+      padding: 96px 24px;
+      background: #F8F6F2;
+      color: #181818;
+    }
+    .ladder-intro {
+      max-width: 900px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+    .ladder-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 48px;
+      line-height: 1.1;
+      margin: 0 0 16px;
+      color: #181818;
+    }
+    .ladder-subhead {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 1.4;
+      color: #7A7670;
+      font-style: italic;
+      margin: 0;
+    }
+    .ladder-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1100px) {
+      .ladder-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .ladder-grid { grid-template-columns: 1fr; }
+    }
+    .ladder-rung {
+      background: #FFFFFF;
+      border-top: 3px solid #BFA054;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .rung-price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      letter-spacing: 0.06em;
+      color: #BFA054;
+      margin-bottom: 16px;
+    }
+    .rung-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      color: #181818;
+    }
+    .rung-description {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #7A7670;
+      flex-grow: 1;
+      margin: 0 0 24px;
+    }
+    .rung-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #181818;
+      text-decoration: none;
+      border-bottom: 1px solid #BFA054;
+      padding-bottom: 4px;
+      align-self: flex-start;
+    }
+    .rung-cta:hover { color: #BFA054; }
+
+    /* ──────────────────────────── HERO SECONDARY CTA ──────────────────────────── */
+    .hero-secondary-cta {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 16px;
+      color: #7A7670;
+      margin: 24px 0 0;
+      text-align: left;
+    }
+    .hero-secondary-cta a {
+      color: #7A7670;
+      border-bottom: 1px solid #7A7670;
+      text-decoration: none;
+      padding-bottom: 1px;
+    }
+    .hero-secondary-cta a:hover {
+      color: #BFA054;
+      border-bottom-color: #BFA054;
+    }
   </style>
 </head>
 <body>
@@ -732,6 +840,7 @@
           <a href="cleared-assessment/" class="cta-secondary">Start with the Assessment</a>
         </div>
         <p class="cta-note">Built for health coaches and integrative practitioners. Not beginners.</p>
+        <p class="hero-secondary-cta">Not ready to book? Start with the <a href="#list">free 5-Part Series &rarr;</a></p>
       </div>
     </div>
   </div>
@@ -848,6 +957,53 @@
     </div>
   </section>
 
+  <!-- ════════════════════════════ TIER LADDER ════════════════════════════ -->
+  <section class="ladder-block">
+    <div class="ladder-intro">
+      <h2 class="ladder-heading">The CLEARED Ladder</h2>
+      <p class="ladder-subhead">Five entry points. Each one tells you something different about where you stand.</p>
+    </div>
+
+    <div class="ladder-grid">
+
+      <div class="ladder-rung">
+        <div class="rung-price">Free</div>
+        <h3 class="rung-name">The CLEARED Intelligence Brief</h3>
+        <p class="rung-description">Weekly signal tracking on AI developments shaping clinical practice. Five minutes every Monday.</p>
+        <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7447363904403574784" class="rung-cta">Subscribe via LinkedIn Newsletter</a>
+      </div>
+
+      <div class="ladder-rung">
+        <div class="rung-price">$17</div>
+        <h3 class="rung-name">AI Audit Checklist</h3>
+        <p class="rung-description">A structured self-audit you run on your own practice. Use it once, reference it every quarter.</p>
+        <a href="https://payhip.com/b/S7jRL" class="rung-cta">Get the Checklist</a>
+      </div>
+
+      <div class="ladder-rung">
+        <div class="rung-price">$27</div>
+        <h3 class="rung-name">Is Your AI in the Red Zone?</h3>
+        <p class="rung-description">A diagnostic guide for the workflows you suspect are over the line but cannot name yet.</p>
+        <a href="https://payhip.com/b/BaN9h" class="rung-cta">Read the Guide</a>
+      </div>
+
+      <div class="ladder-rung">
+        <div class="rung-price">$97</div>
+        <h3 class="rung-name">CLEARED Assessment</h3>
+        <p class="rung-description">A written analysis of your specific AI usage, delivered within 48 hours. Written by Maria personally.</p>
+        <a href="https://cleared.getshgllc.com/cleared-assessment/" class="rung-cta">Start the Assessment</a>
+      </div>
+
+      <div class="ladder-rung">
+        <div class="rung-price">$297</div>
+        <h3 class="rung-name">AI Workflow Audit</h3>
+        <p class="rung-description">A 90-minute live working session. Every workflow classified. Governance document built around your practice.</p>
+        <a href="https://calendly.com/coachmariap/cleared-ai-workflow-audit" class="rung-cta">Book the Audit</a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ════════════════════════════ AUDIENCE ════════════════════════════ -->
   <section>
     <div class="container reveal">
@@ -872,7 +1028,7 @@
 
       <div class="about-card">
         <div class="about-name">Coach Maria</div>
-        <div class="about-title">Founder &middot; Strategic Health Group LLC</div>
+        <div class="about-title">Founder &middot; Strategic Health Group, LLC</div>
 
         <p>
           Thirteen years as a data analyst and quality manager in enterprise IT. System merges. Workflow architecture. Airline and ticketing system integrations for companies like Expedia and Travelscape. The work was always the same: take complex systems, identify where the failure modes lived, and build governance before something went wrong.
@@ -934,8 +1090,8 @@
   <footer>
     <div class="container">
       <p class="footer-text">
-        &copy; 2026 Strategic Health Group LLC &middot;
-        <a href="mailto:maria@getshgllc.com">maria@getshgllc.com</a>
+        &copy; 2026 Strategic Health Group, LLC &middot;
+        <a href="mailto:support@getshgllc.com">support@getshgllc.com</a>
       </p>
       <p class="footer-scripture">Get wisdom. Get understanding. &mdash; Prov 4:5</p>
     </div>

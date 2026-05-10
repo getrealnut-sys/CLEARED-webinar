@@ -308,6 +308,85 @@
       .header-wordmark { font-size: 2rem; }
       .footer { flex-direction: column; gap: 8px; align-items: flex-start; }
     }
+
+    /* ─── LADDER BLOCK ─── */
+    .ladder-block {
+      padding: 32px 0 36px;
+      color: var(--cream);
+    }
+    .ladder-intro {
+      margin-bottom: 24px;
+    }
+    .ladder-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      margin: 0 0 8px;
+      color: var(--cream);
+    }
+    .ladder-subhead {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: var(--stone-light);
+      font-style: italic;
+      margin: 0;
+    }
+    .ladder-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 700px) {
+      .ladder-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .ladder-rung {
+      background: var(--charcoal-soft);
+      border-top: 2px solid var(--gold);
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+    }
+    .rung-price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .rung-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      color: var(--cream);
+    }
+    .rung-description {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      line-height: 1.5;
+      color: var(--stone-light);
+      flex-grow: 1;
+      margin: 0 0 12px;
+    }
+    .rung-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(191,160,84,0.4);
+      padding-bottom: 2px;
+      align-self: flex-start;
+    }
+    .rung-cta:hover { color: #F8F6F2; }
   </style>
 </head>
 <body>
@@ -317,7 +396,7 @@
     <div class="header">
       <div class="header-wordmark">CLEARED</div>
       <div class="header-rule"></div>
-      <div class="header-sub">AI Practitioner Program &middot; by Strategic Health Group LLC</div>
+      <div class="header-sub">AI Practitioner Program &middot; by Strategic Health Group, LLC</div>
       <div class="header-tagline">AI Governance for Health Coaches and Practitioners</div>
     </div>
 
@@ -379,12 +458,52 @@
       <p class="audit-runtime">90 minutes. Live, with you, against your actual practice.</p>
     </div>
 
-    <!-- CTA -->
-    <div class="cta-bar">
-      <div class="cta-headline">Book the AI Workflow Audit</div>
-      <div class="cta-price">$297</div>
-      <div class="cta-link"><a href="https://calendly.com/coachmariap/cleared-ai-workflow-audit">calendly.com/coachmariap/cleared-ai-workflow-audit</a></div>
-    </div>
+    <!-- TIER LADDER -->
+    <section class="ladder-block">
+      <div class="ladder-intro">
+        <h2 class="ladder-heading">The CLEARED Ladder</h2>
+        <p class="ladder-subhead">Five entry points. Each one tells you something different about where you stand.</p>
+      </div>
+
+      <div class="ladder-grid">
+
+        <div class="ladder-rung">
+          <div class="rung-price">Free</div>
+          <h3 class="rung-name">The CLEARED Intelligence Brief</h3>
+          <p class="rung-description">Weekly signal tracking on AI developments shaping clinical practice. Five minutes every Monday.</p>
+          <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7447363904403574784" class="rung-cta">Subscribe via LinkedIn Newsletter</a>
+        </div>
+
+        <div class="ladder-rung">
+          <div class="rung-price">$17</div>
+          <h3 class="rung-name">AI Audit Checklist</h3>
+          <p class="rung-description">A structured self-audit you run on your own practice. Use it once, reference it every quarter.</p>
+          <a href="https://payhip.com/b/S7jRL" class="rung-cta">Get the Checklist</a>
+        </div>
+
+        <div class="ladder-rung">
+          <div class="rung-price">$27</div>
+          <h3 class="rung-name">Is Your AI in the Red Zone?</h3>
+          <p class="rung-description">A diagnostic guide for the workflows you suspect are over the line but cannot name yet.</p>
+          <a href="https://payhip.com/b/BaN9h" class="rung-cta">Read the Guide</a>
+        </div>
+
+        <div class="ladder-rung">
+          <div class="rung-price">$97</div>
+          <h3 class="rung-name">CLEARED Assessment</h3>
+          <p class="rung-description">A written analysis of your specific AI usage, delivered within 48 hours. Written by Maria personally.</p>
+          <a href="https://cleared.getshgllc.com/cleared-assessment/" class="rung-cta">Start the Assessment</a>
+        </div>
+
+        <div class="ladder-rung">
+          <div class="rung-price">$297</div>
+          <h3 class="rung-name">AI Workflow Audit</h3>
+          <p class="rung-description">A 90-minute live working session. Every workflow classified. Governance document built around your practice.</p>
+          <a href="https://calendly.com/coachmariap/cleared-ai-workflow-audit" class="rung-cta">Book the Audit</a>
+        </div>
+
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <div class="footer">
