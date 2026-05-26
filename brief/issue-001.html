@@ -4,378 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Issue 001 | The CLEARED Intelligence Brief</title>
-  <meta name="description" content="Hospital CEO ready to replace radiologists with AI, FDA relaxes oversight, WHO mental health warning, and Penn State liability research. Issue 001, April 1, 2026." />
+  <meta name="description" content="CEO of America's Largest Public Hospital System Says He Is Ready to Replace Radiologists with AI Issue 001, April 01, 2026." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --charcoal: #181818;
-      --charcoal-soft: #1F1F1F;
-      --charcoal-mid: #252525;
-      --gold: #BFA054;
-      --gold-light: #d4b46a;
-      --gold-dim: rgba(191, 160, 84, 0.15);
-      --gold-mid: rgba(191, 160, 84, 0.35);
-      --cream: #F8F6F2;
-      --stone: #7A7670;
-      --stone-light: #9a9490;
-      --border: rgba(191, 160, 84, 0.12);
+  <link rel="stylesheet" href="./issue.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://cleared.getshgllc.com/brief/issue-001.html#article",
+    "headline": "CEO of America's Largest Public Hospital System Says He Is Ready to Replace Radiologists with AI",
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-01",
+    "author": {
+      "@type": "Person",
+      "@id": "https://cleared.getshgllc.com/#maria-castro",
+      "name": "Maria Castro",
+      "alternateName": "Coach Maria",
+      "jobTitle": "Founder, Strategic Health Group, LLC",
+      "description": "13 years enterprise data analyst and quality manager; integrative health practitioner; founder of the CLEARED framework for AI governance in clinical practice.",
+      "sameAs": [
+        "https://www.linkedin.com/in/coachmariap"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://cleared.getshgllc.com/#organization",
+      "name": "Strategic Health Group, LLC",
+      "url": "https://cleared.getshgllc.com/"
+    },
+    "articleSection": "AI Governance for Clinical Practice",
+    "mainEntityOfPage": "https://cleared.getshgllc.com/brief/issue-001.html",
+    "isPartOf": {
+      "@type": "Periodical",
+      "name": "The CLEARED Intelligence Brief",
+      "url": "https://cleared.getshgllc.com/brief/"
     }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--charcoal);
-      color: var(--cream);
-      font-family: 'Barlow', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.35;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 28px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ──────────────────────────── NAV ──────────────────────────── */
-    nav {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      z-index: 10;
-    }
-    nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-wordmark {
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .nav-wordmark-text {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--cream);
-    }
-    .nav-wordmark-sub {
-      font-family: 'Barlow', sans-serif;
-      font-weight: 400;
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .nav-back {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      color: var(--stone-light);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--gold); }
-
-    /* ──────────────────────────── ISSUE HEADER ──────────────────────────── */
-    .issue-header {
-      padding: 72px 0 48px;
-    }
-
-    .eyebrow {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 32px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    h1 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.05;
-      text-transform: uppercase;
-      color: var(--cream);
-      margin-bottom: 16px;
-      letter-spacing: 0.02em;
-    }
-    h1 .gold { color: var(--gold); }
-
-    .issue-meta {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--stone);
-    }
-
-    .issue-intro {
-      margin-top: 32px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .issue-intro p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      color: var(--stone-light);
-      font-style: italic;
-      line-height: 1.5;
-    }
-
-    /* ──────────────────────────── BRIEF CONTENT ──────────────────────────── */
-    .brief-body {
-      padding-bottom: 72px;
-    }
-
-    .signal-block {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-    }
-    .signal-block:last-of-type {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .signal-label {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1.55rem;
-      line-height: 1.2;
-      letter-spacing: 0.01em;
-      color: var(--cream);
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    .signal-body {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.97rem;
-      color: var(--cream);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .signal-takeaway {
-      background: var(--gold-dim);
-      border-left: 2px solid var(--gold);
-      padding: 16px 20px;
-      border-radius: 0 2px 2px 0;
-    }
-    .signal-takeaway-label {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-    .signal-takeaway p {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.93rem;
-      color: var(--cream);
-      line-height: 1.7;
-    }
-
-    .pattern-section, .action-section {
-      padding: 48px 0;
-    }
-    .pattern-section {
-      border-top: 1px solid var(--border);
-    }
-
-    h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .pattern-body, .action-body {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.97rem;
-      color: var(--cream);
-      line-height: 1.8;
-    }
-
-    /* ──────────────────────────── DIVIDER ──────────────────────────── */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0;
-    }
-
-    /* ──────────────────────────── CTA BLOCK ──────────────────────────── */
-    .cta-block {
-      padding: 56px 0;
-      text-align: center;
-    }
-    .cta-block-inner {
-      background: var(--charcoal-soft);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 44px 40px;
-    }
-    .cta-heading {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--cream);
-      margin-bottom: 12px;
-    }
-    .cta-sub {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--stone-light);
-      margin-bottom: 28px;
-    }
-    .cta-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--charcoal);
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 2px;
-      transition: background 0.2s ease, transform 0.15s ease;
-    }
-    .cta-btn:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-    }
-
-    /* ──────────────────────────── BACK NAV ──────────────────────────── */
-    .back-nav {
-      padding: 24px 0 48px;
-    }
-    .back-link {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      color: var(--stone-light);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: var(--gold); }
-
-    /* ──────────────────────────── FOOTER ──────────────────────────── */
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid rgba(255,255,255,0.04);
-    }
-    footer .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-text {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.75rem;
-      color: var(--stone);
-      letter-spacing: 0.03em;
-    }
-    .footer-text a {
-      color: var(--stone-light);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-text a:hover { color: var(--gold); }
-    .footer-scripture {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.82rem;
-      color: rgba(191,160,84,0.4);
-      font-style: italic;
-    }
-
-    @media (max-width: 600px) {
-      .cta-block-inner { padding: 32px 24px; }
-      footer .container { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+  }
+  </script>
 </head>
 <body>
 
-  <!-- ════════════════════════════ NAV ════════════════════════════ -->
   <nav>
     <div class="container">
       <a href="../index.html" class="nav-wordmark">
         <span class="nav-wordmark-text">CLEARED</span>
-        <span class="nav-wordmark-sub">Intelligence Brief</span>
+        <span class="nav-wordmark-sub">AI Practitioner Program</span>
       </a>
       <a href="./index.html" class="nav-back">&larr; All Issues</a>
     </div>
   </nav>
 
-  <!-- ════════════════════════════ ISSUE HEADER ════════════════════════════ -->
   <header class="issue-header">
     <div class="container">
       <p class="eyebrow">Intelligence Brief</p>
       <h1>The <span class="gold">CLEARED</span><br>Intelligence Brief</h1>
-      <p class="issue-meta">Issue 001 &nbsp;|&nbsp; April 1, 2026</p>
+      <p class="issue-meta">Issue 001 &nbsp;|&nbsp; April 01, 2026</p>
       <div class="issue-intro">
         <p>What happened this week in AI and health practice governance.</p>
         <p>What it means for your practice.</p>
@@ -384,11 +69,20 @@
     </div>
   </header>
 
-  <!-- ════════════════════════════ BRIEF CONTENT ════════════════════════════ -->
   <main class="brief-body">
     <div class="container">
 
-      <!-- Signal 1 -->
+      <div class="byline">
+        <span class="author">Maria Castro, NBC-HWC</span>
+        <span class="separator">&middot;</span>
+        <span class="credential">13 years enterprise data + integrative practice</span>
+        <span class="separator">&middot;</span>
+        <span class="date">Published 2026-04-01</span>
+      </div>
+
+      <div class="direct-answer"><p>AI is entering health practice faster than governance frameworks are keeping up. The FDA is reducing oversight. Hospital systems are pushing AI into diagnostic roles without clinical review protocols. The WHO is raising alarms. Practitioners who can document what AI touches, when, and what they did with its output will be differentiated from those who cannot.</p></div>
+
+
       <div class="signal-block">
         <p class="signal-label">Signal 1</p>
         <h2>CEO of America's Largest Public Hospital System Says He Is Ready to Replace Radiologists with AI</h2>
@@ -399,7 +93,6 @@
         </div>
       </div>
 
-      <!-- Signal 2 -->
       <div class="signal-block">
         <p class="signal-label">Signal 2</p>
         <h2>FDA Relaxes Oversight of AI Health Software and Clinical Decision Support Tools</h2>
@@ -410,7 +103,6 @@
         </div>
       </div>
 
-      <!-- Signal 3 -->
       <div class="signal-block">
         <p class="signal-label">Signal 3</p>
         <h2>WHO Convenes Global Consortium on Responsible AI in Mental Health</h2>
@@ -421,7 +113,6 @@
         </div>
       </div>
 
-      <!-- Signal 4 -->
       <div class="signal-block">
         <p class="signal-label">Signal 4</p>
         <h2>Penn State Research Shows AI in Clinical Workflows Lowers Perceived Liability. It Does Not Eliminate It.</h2>
@@ -432,43 +123,45 @@
         </div>
       </div>
 
-      <!-- The Pattern -->
       <div class="pattern-section">
         <h3>The Pattern</h3>
         <p class="pattern-body">The trajectory is clear: AI is entering health practice faster than governance frameworks can keep up. The FDA is stepping back. Hospital systems are pushing forward. The WHO is raising alarms. And the legal system is still figuring out who to hold accountable when something goes wrong. What this means for practitioners who are paying attention: the window between "AI is optional" and "AI is expected" is closing. The practitioners who can demonstrate they governed their AI integration thoughtfully will be differentiated from those who either avoided it entirely or adopted it without guardrails. Both extremes carry risk. The middle path is governance.</p>
       </div>
 
-      <!-- One Thing -->
       <div class="action-section">
         <h3>One Thing You Can Do This Week</h3>
         <p class="action-body">Open your practice software, your intake forms, your note-taking tools. Ask one question: does any AI touch this? Most practitioners cannot answer with certainty. That uncertainty is your starting point. Write down every tool you use. Mark the ones you know use AI. Mark the ones you are not sure about. That list is the beginning of your audit.</p>
       </div>
-
     </div>
   </main>
 
-  <!-- ════════════════════════════ DIVIDER ════════════════════════════ -->
+  <p class="last-updated" style="text-align:center;font-size:0.8rem;color:var(--stone-light);padding:0.5rem 0;">Last updated: 2026-04-01</p>
+
   <div class="divider"></div>
 
-  <!-- ════════════════════════════ CTA BLOCK ════════════════════════════ -->
   <section class="cta-block">
     <div class="container">
       <div class="cta-block-inner">
         <p class="cta-heading">Get this in your inbox every Monday.</p>
         <p class="cta-sub">Signal tracking for practitioners who are paying attention.</p>
         <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7447363904403574784" class="cta-btn">Subscribe via LinkedIn Newsletter &rarr;</a>
+        <p style="margin-top: 1.2rem; font-size: 0.85rem; color: var(--stone-light);">Missed an issue? <a href="./index.html" style="color: var(--gold);">Read every prior brief in the archive &rarr;</a></p>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════ BACK NAV ════════════════════════════ -->
+  <section class="brief-cta-footer">
+    <h3 class="brief-cta-heading">Two ways to take this further:</h3>
+    <p class="brief-cta-question">Want a structured walk-through before going further? Start with the <a href="https://payhip.com/b/S7jRL"><strong>AI Audit Checklist ($17) &rarr;</strong></a></p>
+    <p class="brief-cta-question">Want a written analysis of your specific practice from Maria? Start with the <a href="https://cleared.getshgllc.com/cleared-assessment/"><strong>CLEARED Assessment ($97) &rarr;</strong></a></p>
+  </section>
+
   <div class="back-nav">
     <div class="container">
       <a href="./index.html" class="back-link">&larr; All Issues</a>
     </div>
   </div>
 
-  <!-- ════════════════════════════ FOOTER ════════════════════════════ -->
   <footer>
     <div class="container">
       <p class="footer-text">
