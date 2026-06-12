@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Eight-Element Self-Audit | CLEARED</title>
+<meta name="description" content="A free self-audit for health practitioners. Score your AI governance against the CHAI eight-element standard, sized to a practice of one. By Strategic Health Group, LLC." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --gold: #c0a062;
+    --gold-soft: rgba(192,160,98,0.12);
+    --gold-line: rgba(192,160,98,0.25);
+    --cream: #f5f0e6;
+    --stone-light: #a89f8e;
+    --ink: #1a1814;
+    --ink-2: #221f1a;
+    --green: #7d9468;
+    --green-soft: rgba(125,148,104,0.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(192,160,98,0.10), transparent 60%);
+    background-repeat: no-repeat;
+  }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ---- INTRO ---- */
+  .intro {
+    padding: 5rem 0 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--gold-line);
+  }
+  .intro .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 0.78rem; color: var(--gold);
+    opacity: 0; animation: rise 0.6s ease forwards 0.1s;
+  }
+  .intro h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.04;
+    margin: 1.2rem 0 1.4rem;
+    opacity: 0; animation: rise 0.6s ease forwards 0.25s;
+  }
+  .intro h1 .gold { color: var(--gold); font-style: italic; }
+  .intro .lede {
+    max-width: 34em; margin: 0 auto; color: var(--stone-light); font-size: 1.08rem;
+    opacity: 0; animation: rise 0.6s ease forwards 0.4s;
+  }
+  .intro .source-note {
+    margin-top: 1.5rem; font-size: 0.85rem; color: var(--stone-light);
+    opacity: 0; animation: rise 0.6s ease forwards 0.55s;
+  }
+  .intro .source-note a { color: var(--gold); text-decoration: none; }
+  .intro .source-note a:hover { text-decoration: underline; }
+
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  .intro .eyebrow, .intro h1, .intro .lede, .intro .source-note { transform: translateY(12px); }
+
+  /* ---- STICKY PROGRESS ---- */
+  .progress-bar {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(26,24,20,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--gold-line);
+    padding: 0.9rem 0;
+  }
+  .progress-inner {
+    max-width: 760px; margin: 0 auto; padding: 0 1.5rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .progress-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: 0.78rem; color: var(--stone-light); white-space: nowrap;
+  }
+  .progress-label b { color: var(--gold); }
+  .progress-track {
+    flex: 1; height: 4px; background: var(--gold-line); border-radius: 2px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; width: 0%; background: var(--gold);
+    transition: width 0.4s cubic-bezier(.4,0,.2,1);
+  }
+
+  /* ---- ELEMENT CARDS ---- */
+  .audit { padding: 2.5rem 0 1rem; }
+  .card {
+    border: 1px solid var(--gold-line);
+    border-radius: 5px;
+    padding: 1.8rem 1.6rem;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(180deg, rgba(192,160,98,0.035), transparent);
+    transition: border-color 0.25s ease;
+  }
+  .card.answered { border-color: rgba(192,160,98,0.4); }
+  .card .card-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 0.74rem; color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 1.7rem; line-height: 1.15; color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+  .card .chai-line {
+    font-size: 0.92rem; color: var(--stone-light); margin-bottom: 1.1rem;
+    padding-left: 0.9rem; border-left: 2px solid var(--gold-line);
+  }
+  .card .question {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.22rem; line-height: 1.4; color: var(--cream);
+    margin-bottom: 1.1rem;
+  }
+  .options { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .opt {
+    flex: 1; min-width: 120px;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--gold-line);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--cream);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: 0.86rem;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    text-align: center;
+  }
+  .opt:hover { border-color: var(--gold); transform: translateY(-1px); }
+  .opt .opt-sub {
+    display: block; font-family: 'Barlow', sans-serif; font-weight: 400;
+    letter-spacing: 0; text-transform: none; font-size: 0.74rem;
+    color: var(--stone-light); margin-top: 0.2rem;
+  }
+  .opt[data-state="in-place"].selected { background: var(--green-soft); border-color: var(--green); color: var(--cream); }
+  .opt[data-state="partial"].selected  { background: var(--gold-soft); border-color: var(--gold); color: var(--cream); }
+  .opt[data-state="none"].selected      { background: rgba(168,159,142,0.14); border-color: var(--stone-light); color: var(--cream); }
+  .opt.selected .opt-sub { color: var(--cream); }
+
+  /* ---- RESULTS ---- */
+  .results {
+    display: none;
+    padding: 1rem 0 4rem;
+  }
+  .results.show { display: block; animation: rise 0.7s ease forwards; transform: translateY(16px); opacity: 0; }
+  .results-head { text-align: center; padding: 2.5rem 0 1.5rem; border-top: 1px solid var(--gold-line); }
+  .results-head .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 0.78rem; color: var(--gold);
+  }
+  .results-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); margin: 0.6rem 0 0.4rem;
+  }
+  .results-head h2 .gold { color: var(--gold); font-style: italic; }
+  .tally {
+    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+    margin: 1.5rem 0 0.5rem;
+  }
+  .tally-item { text-align: center; }
+  .tally-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; line-height: 1; }
+  .tally-num.green { color: var(--green); }
+  .tally-num.gold { color: var(--gold); }
+  .tally-num.stone { color: var(--stone-light); }
+  .tally-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.72rem;
+    color: var(--stone-light); margin-top: 0.3rem;
+  }
+
+  .gap-map { margin: 2rem 0; }
+  .gap-row {
+    display: flex; align-items: baseline; gap: 0.8rem;
+    padding: 0.85rem 0; border-bottom: 1px solid rgba(192,160,98,0.12);
+  }
+  .gap-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; transform: translateY(2px); }
+  .gap-dot.in-place { background: var(--green); }
+  .gap-dot.partial { background: var(--gold); }
+  .gap-dot.none { background: var(--stone-light); }
+  .gap-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--cream); flex: 1; }
+  .gap-status {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.74rem;
+  }
+  .gap-status.in-place { color: var(--green); }
+  .gap-status.partial { color: var(--gold); }
+  .gap-status.none { color: var(--stone-light); }
+
+  .close-note {
+    background: linear-gradient(180deg, rgba(192,160,98,0.07), rgba(192,160,98,0.02));
+    border: 1px solid var(--gold-line); border-radius: 5px;
+    padding: 1.8rem 1.6rem; margin: 2rem 0;
+  }
+  .close-note p { color: var(--cream); margin-bottom: 0.9rem; }
+  .close-note p:last-child { margin-bottom: 0; }
+  .close-note .lead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--gold); }
+
+  .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.8rem; }
+  .btn {
+    flex: 1; min-width: 200px; text-align: center;
+    padding: 0.95rem 1.4rem; border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem;
+    text-decoration: none; cursor: pointer; border: 1px solid var(--gold);
+    transition: transform 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--gold); color: var(--ink); }
+  .btn-ghost { background: transparent; color: var(--gold); }
+
+  .print-link {
+    display: inline-block; margin-top: 1.5rem; background: none; border: none;
+    color: var(--stone-light); font-family: 'Barlow', sans-serif; font-size: 0.9rem;
+    text-decoration: underline; cursor: pointer; padding: 0;
+  }
+  .print-link:hover { color: var(--gold); }
+
+  footer {
+    text-align: center; padding: 2.5rem 0; border-top: 1px solid rgba(192,160,98,0.12);
+    font-size: 0.85rem; color: var(--stone-light);
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  .footer-scripture { font-family: 'Cormorant Garamond', serif; font-style: italic; margin-top: 0.8rem; }
+
+  .reveal-prompt {
+    text-align: center; padding: 1.5rem 0 0; color: var(--stone-light);
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem;
+  }
+
+  /* ---- PRINT ---- */
+  @media print {
+    body { background: #fff; color: #1a1814; background-image: none; }
+    .progress-bar, .audit, .intro .source-note, .cta-row, .print-link, .reveal-prompt { display: none !important; }
+    .results { display: block !important; }
+    .gap-name, .results-head h2, .close-note .lead { color: #1a1814; }
+    .close-note { border-color: #c0a062; background: #faf7f0; }
+    .close-note p { color: #1a1814; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <section class="intro">
+    <p class="eyebrow">A CLEARED Self-Audit · Free</p>
+    <h1>The Eight-Element<br><span class="gold">Self-Audit</span></h1>
+    <p class="lede">The Coalition for Health AI wrote the governance standard for health systems. This is that standard, sized to a practice of one. Eight questions. Answer each honestly. What you get back is a gap map no consultant handed you.</p>
+    <p class="source-note">Grounded in the open-source CHAI AI Governance Playbooks (May 2026). The standard is CHAI's; the practitioner translation is CLEARED's. Read the source at <a href="https://www.chai.org" target="_blank" rel="noopener">chai.org</a>.</p>
+  </section>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-inner">
+    <span class="progress-label"><b id="answeredCount">0</b> of 8 answered</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="audit" id="audit"></section>
+
+  <p class="reveal-prompt" id="revealPrompt">Answer all eight to reveal your gap map.</p>
+
+  <section class="results" id="results">
+    <div class="results-head">
+      <p class="eyebrow">Your Result</p>
+      <h2>The Eight-Element <span class="gold">Gap Map</span></h2>
+    </div>
+
+    <div class="tally">
+      <div class="tally-item"><div class="tally-num green" id="tallyInPlace">0</div><div class="tally-label">In place</div></div>
+      <div class="tally-item"><div class="tally-num gold" id="tallyPartial">0</div><div class="tally-label">Partial</div></div>
+      <div class="tally-item"><div class="tally-num stone" id="tallyNone">0</div><div class="tally-label">Not yet</div></div>
+    </div>
+
+    <div class="gap-map" id="gapMap"></div>
+
+    <div class="close-note" id="closeNote"></div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7447363904403574784" target="_blank" rel="noopener">Get the weekly Brief</a>
+      <a class="btn btn-ghost" href="https://cleared.getshgllc.com/cleared-assessment/" target="_blank" rel="noopener">Walk it through — Assessment $97</a>
+    </div>
+    <div style="text-align:center;">
+      <button class="print-link" onclick="window.print()">Save or print your gap map →</button>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Strategic Health Group, LLC · <a href="mailto:support@getshgllc.com">support@getshgllc.com</a></p>
+    <p style="margin-top:0.3rem;"><a href="https://cleared.getshgllc.com">cleared.getshgllc.com</a></p>
+    <p class="footer-scripture">Get wisdom. Get understanding. — Prov 4:5</p>
+  </div>
+</footer>
+
+<script>
+  const ELEMENTS = [
+    {
+      n: "Element 1",
+      name: "Organizational AI Policy",
+      chai: "CHAI: a formal written AI policy with a defined scope, an owner, and clear lines on what's permitted and prohibited.",
+      q: "Do I have a written statement of what I use AI for, what I refuse to use it for, and how I decide before adopting a new tool?"
+    },
+    {
+      n: "Element 2",
+      name: "Organizational Structure",
+      chai: "CHAI: clear lines of accountability — named ownership for AI oversight, with real authority.",
+      q: "For every AI tool touching my practice, can I name the one person accountable for it?"
+    },
+    {
+      n: "Element 3",
+      name: "Organizational Resources",
+      chai: "CHAI: dedicated investment in oversight — including security basics and the means to monitor how tools perform.",
+      q: "Do I have a recurring, scheduled time to review my AI tools and their data handling?"
+    },
+    {
+      n: "Element 4",
+      name: "Responsible AI Lifecycle Management",
+      chai: "CHAI: govern every tool from vetting to retirement — including embedded and 'shadow' AI that arrives by update.",
+      q: "Do I have a current list of every AI tool touching client information, including features that arrived through updates?"
+    },
+    {
+      n: "Element 5",
+      name: "Risk and Impact Assessments",
+      chai: "CHAI: assess what could go wrong and who it affects, proportional to the stakes of each use.",
+      q: "For each AI use, have I asked who is harmed and how badly if the output is wrong?"
+    },
+    {
+      n: "Element 6",
+      name: "Responsible Data Management and Use",
+      chai: "CHAI: govern where data goes, who can reach it, and whether its use respects consent and provenance.",
+      q: "For each tool, do I know whether client data leaves my control and whether the vendor trains on it — and do my clients know?"
+    },
+    {
+      n: "Element 7",
+      name: "Third-Party Management",
+      chai: "CHAI: vet the vendors behind your AI. Their compliance covers them, not you.",
+      q: "For each AI vendor, have I read their data terms and confirmed where their responsibility ends and mine begins?"
+    },
+    {
+      n: "Element 8",
+      name: "Education, Training, and Feedback",
+      chai: "CHAI: everyone using AI knows the rules and has a channel to flag problems — governance as a living loop.",
+      q: "Does everyone who touches AI in my practice — including future me — know the rules and have a way to flag problems?"
+    }
+  ];
+
+  const STATES = [
+    { key: "in-place", label: "In place", sub: "It's written / done" },
+    { key: "partial",  label: "Partial",  sub: "Started, not solid" },
+    { key: "none",     label: "Not yet",  sub: "Honestly, none" }
+  ];
+
+  const answers = {}; // in-memory only — no storage
+
+  const auditEl = document.getElementById('audit');
+  ELEMENTS.forEach((el, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.id = 'card-' + i;
+    card.innerHTML = `
+      <p class="card-num">${el.n}</p>
+      <h2>${el.name}</h2>
+      <p class="chai-line">${el.chai}</p>
+      <p class="question">${el.q}</p>
+      <div class="options">
+        ${STATES.map(s => `
+          <button class="opt" data-state="${s.key}" data-card="${i}">
+            ${s.label}<span class="opt-sub">${s.sub}</span>
+          </button>`).join('')}
+      </div>`;
+    auditEl.appendChild(card);
+  });
+
+  document.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.dataset.card;
+      const state = btn.dataset.state;
+      answers[card] = state;
+      document.querySelectorAll(`.opt[data-card="${card}"]`).forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('card-' + card).classList.add('answered');
+      update();
+    });
+  });
+
+  function update() {
+    const count = Object.keys(answers).length;
+    document.getElementById('answeredCount').textContent = count;
+    document.getElementById('progressFill').style.width = (count / 8 * 100) + '%';
+    if (count === 8) renderResults();
+  }
+
+  function renderResults() {
+    const counts = { 'in-place': 0, 'partial': 0, 'none': 0 };
+    Object.values(answers).forEach(v => counts[v]++);
+    document.getElementById('tallyInPlace').textContent = counts['in-place'];
+    document.getElementById('tallyPartial').textContent = counts['partial'];
+    document.getElementById('tallyNone').textContent = counts['none'];
+
+    const map = document.getElementById('gapMap');
+    map.innerHTML = '';
+    ELEMENTS.forEach((el, i) => {
+      const st = answers[i];
+      const label = STATES.find(s => s.key === st).label;
+      const row = document.createElement('div');
+      row.className = 'gap-row';
+      row.innerHTML = `
+        <span class="gap-dot ${st}"></span>
+        <span class="gap-name">${el.name}</span>
+        <span class="gap-status ${st}">${label}</span>`;
+      map.appendChild(row);
+    });
+
+    const gaps = counts['none'] + counts['partial'];
+    const note = document.getElementById('closeNote');
+    let lead, body;
+    if (counts['none'] === 0 && counts['partial'] === 0) {
+      lead = "Eight for eight.";
+      body = "That is rare, and it is worth documenting. Governance is not a one-time state — the standard moves and the state laws move with it. Your edge now is the recurring review that keeps this map accurate a quarter from now.";
+    } else if (gaps <= 3) {
+      lead = `${gaps} ${gaps === 1 ? 'gap' : 'gaps'}. A short list.`;
+      body = "You are further along than most practices using AI today. The items above marked Partial or Not yet are not a verdict — they are the exact, finite list of what to close, in priority order. Start with the one whose output reaches a client.";
+    } else {
+      lead = `${gaps} gaps. That is the map, not a failure.`;
+      body = "Most practitioners using AI have never seen this list, let alone scored against it. The fact that you can now name the gaps puts you ahead of the audit, not behind it. Take them one at a time. Element 1 — a written policy — unlocks several of the others.";
+    }
+    note.innerHTML = `
+      <p class="lead">${lead}</p>
+      <p>${body}</p>
+      <p>The eight items above are your gap analysis — built against the real CHAI standard, sized to your real practice. Save this. Re-run it each quarter. That cadence <em>is</em> the governance.</p>`;
+
+    document.getElementById('revealPrompt').style.display = 'none';
+    const res = document.getElementById('results');
+    res.classList.add('show');
+    res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+</body>
+</html>

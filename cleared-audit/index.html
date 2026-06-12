@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Workflow Audit · Sixty Minutes on the Workflow That Worries You</title>
+<meta name="description" content="A 60-minute audit of one AI workflow in your practice, end to end, with a documented governance recommendation. By Strategic Health Group, LLC. $297." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --gold: #c0a062;
+    --gold-soft: rgba(192,160,98,0.12);
+    --gold-line: rgba(192,160,98,0.25);
+    --cream: #f5f0e6;
+    --stone-light: #a89f8e;
+    --ink: #1a1814;
+    --green: #7d9468;
+    --yellow: #d4a13b;
+    --red: #b85042;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--ink); color: var(--cream);
+    font-family: 'Barlow', sans-serif; line-height: 1.6;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(192,160,98,0.10), transparent 60%);
+    background-repeat: no-repeat;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+  a { color: var(--gold); }
+
+  /* HEADER */
+  .top {
+    padding: 2.5rem 0 0;
+    text-align: center;
+  }
+  .brand-mark {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+    font-size: 1rem; color: var(--gold);
+  }
+  .brand-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 0.78rem; color: var(--stone-light); margin-top: 0.4rem;
+  }
+
+  /* HERO */
+  .hero { padding: 4.5rem 0 3rem; text-align: center; border-bottom: 1px solid var(--gold-line); }
+  .hero .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 0.82rem; color: var(--gold); margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.05;
+    margin: 0 0 1.5rem 0;
+  }
+  .hero h1 .gold { color: var(--gold); font-style: italic; }
+  .hero .lede {
+    max-width: 34em; margin: 0 auto 1.75rem; font-size: 1.1rem;
+    color: var(--stone-light);
+  }
+  .hero .price-line {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 0.85rem; color: var(--cream); margin-bottom: 2rem;
+  }
+  .hero .price-line .gold { color: var(--gold); }
+  .cta-btn {
+    display: inline-block; padding: 1rem 2.5rem;
+    background: var(--gold); color: var(--ink);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 1rem; text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .cta-btn:hover { transform: translateY(-2px); }
+  .cta-note {
+    margin-top: 1rem; font-size: 0.92rem; color: var(--stone-light);
+  }
+
+  /* SECTIONS */
+  section { padding: 4rem 0; border-bottom: 1px solid var(--gold-line); }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 0.78rem; color: var(--gold); text-align: center;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem); line-height: 1.12;
+    text-align: center; margin-bottom: 2.5rem;
+  }
+  .section-title .gold { color: var(--gold); font-style: italic; }
+  .prose { max-width: 38em; margin: 0 auto; }
+  .prose p { margin-bottom: 1.2rem; color: var(--cream); }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose blockquote {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.2rem; color: var(--cream);
+  }
+
+  /* WHAT YOU RECEIVE GRID */
+  .deliverables {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem; max-width: 720px; margin: 0 auto;
+  }
+  .deliverable {
+    background: rgba(192, 160, 98, 0.04);
+    border: 1px solid var(--gold-line);
+    border-radius: 4px; padding: 1.75rem 1.5rem;
+  }
+  .deliverable .num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; color: var(--gold);
+    font-size: 0.85rem; letter-spacing: 0.18em;
+    margin-bottom: 0.6rem;
+  }
+  .deliverable h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 1.3rem;
+    color: var(--cream); margin-bottom: 0.75rem;
+  }
+  .deliverable p { font-size: 0.96rem; color: var(--stone-light); }
+
+  /* WHO IT'S FOR */
+  .for-list { max-width: 36em; margin: 0 auto; }
+  .for-list li {
+    list-style: none; padding-left: 1.5rem; position: relative;
+    margin-bottom: 1rem; color: var(--cream);
+  }
+  .for-list li::before {
+    content: '→'; position: absolute; left: 0; color: var(--gold);
+  }
+
+  /* WHEN AUDIT VS ASSESSMENT */
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    max-width: 720px; margin: 0 auto;
+  }
+  @media (max-width: 560px) { .compare { grid-template-columns: 1fr; } }
+  .compare-card {
+    background: rgba(192, 160, 98, 0.04);
+    border: 1px solid var(--gold-line);
+    border-radius: 4px; padding: 1.75rem 1.5rem;
+  }
+  .compare-card.audit { border-color: var(--gold); }
+  .compare-card .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); font-size: 0.78rem; margin-bottom: 0.75rem;
+  }
+  .compare-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500; font-size: 1.4rem; color: var(--cream);
+    margin-bottom: 1rem;
+  }
+  .compare-card p {
+    font-size: 0.96rem; color: var(--stone-light);
+  }
+  .compare-card .price {
+    margin-top: 1rem; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; letter-spacing: 0.1em; color: var(--cream);
+    font-size: 0.9rem;
+  }
+
+  /* ABOUT */
+  .about-maria { background: rgba(192, 160, 98, 0.03); }
+
+  /* FINAL CTA */
+  .final-cta { text-align: center; padding: 5rem 0; border-bottom: 0; }
+  .final-cta h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;
+  }
+  .final-cta p { max-width: 32em; margin: 0 auto 2rem; color: var(--stone-light); }
+
+  footer {
+    padding: 2.5rem 0; text-align: center;
+    font-size: 0.85rem; color: var(--stone-light);
+    border-top: 1px solid var(--gold-line);
+  }
+</style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="container">
+      <p class="brand-mark">CLEARED</p>
+      <p class="brand-sub">AI Practitioner Program · by SHG LLC</p>
+    </div>
+  </header>
+
+  <section class="hero" style="border-bottom: 1px solid var(--gold-line);">
+    <div class="container">
+      <p class="eyebrow">The Audit</p>
+      <h1>Sixty minutes on the workflow<br>that <span class="gold">worries you.</span></h1>
+      <p class="lede">You can name the AI workflow in your practice that does not sit right. The one you keep meaning to think through, and never do. The Audit is sixty minutes on that one workflow, end to end, with a documented governance recommendation you can act on the same week.</p>
+      <p class="price-line">$297 <span class="gold">·</span> One workflow, fully audited <span class="gold">·</span> 60-minute call <span class="gold">·</span> Recommendation within 48 hours</p>
+      <a href="https://book.stripe.com/https://buy.stripe.com/5kQ28q7TF4CtcKTbv21Jm01" class="cta-btn">Book the Audit</a>
+      <p class="cta-note">You will receive a workflow-specific intake form immediately after payment.</p>
+    </div>
+  </section>
+
+  <!-- WHY THIS EXISTS -->
+  <section>
+    <div class="container">
+      <p class="section-label">Why this exists</p>
+      <h2 class="section-title">The Assessment is across the practice. The Audit is <span class="gold">into</span> one workflow.</h2>
+      <div class="prose">
+        <p>The CLEARED Assessment ($97) is the structured view across your tool stack. Many tools, written sort against the Red/Yellow/Green Zone Model, delivered as a document. Most practitioners start there. Many stop there. It is sufficient on its own.</p>
+        <p>But sometimes the question is not across. It is in. One specific workflow is the exposure. The AI scribe in client sessions. The summary tool processing intakes. The drafting workflow that touches client communications. You can name it. You have been carrying it for months.</p>
+        <p>The Audit is for that workflow. Sixty minutes, end to end. What the tool actually does. What data moves through it. Where the vendor's responsibility ends and yours begins. Where the workflow sits on the Zone Model right now, and what one or two changes move it. A documented recommendation, written by hand, delivered within 48 hours of the call.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU RECEIVE -->
+  <section>
+    <div class="container">
+      <p class="section-label">What you receive</p>
+      <h2 class="section-title">Four things.<br>No filler.</h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <p class="num">01</p>
+          <h3>Workflow Map</h3>
+          <p>Every step of the audited workflow, from trigger through deliverable, with the AI touchpoint named at each step. The map is the foundation everything else builds on.</p>
+        </div>
+        <div class="deliverable">
+          <p class="num">02</p>
+          <h3>Zone Sort, Per Step</h3>
+          <p>Each step classified Green, Yellow, or Red, with the reasoning written in plain language. You see exactly where in the workflow the exposure sits.</p>
+        </div>
+        <div class="deliverable">
+          <p class="num">03</p>
+          <h3>Governance Recommendation</h3>
+          <p>The one or two specific adjustments that move the workflow out of exposure. Not a generic checklist. The changes that apply to your tool, your client population, your scope.</p>
+        </div>
+        <div class="deliverable">
+          <p class="num">04</p>
+          <h3>Written by Maria. Not AI.</h3>
+          <p>The recommendation is written by hand, specific to the call, delivered within 48 hours. No templates. The analysis is what you are paying for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section>
+    <div class="container">
+      <p class="section-label">Right for you if</p>
+      <h2 class="section-title">You can already name the workflow.</h2>
+      <ul class="for-list">
+        <li>You can point to one specific AI workflow that worries you. Not a general concern. A specific use.</li>
+        <li>You have either completed the Assessment, or you already know the broad picture and want to go deep on one piece.</li>
+        <li>The workflow involves client information, clinical content, or anything that reaches a client.</li>
+        <li>You want a documented governance recommendation you can implement the same week, not a 20-point plan.</li>
+        <li>You would rather pay for sixty focused minutes than spend months tracing the exposure yourself.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AUDIT VS ASSESSMENT -->
+  <section>
+    <div class="container">
+      <p class="section-label">Choosing the rung</p>
+      <h2 class="section-title">Audit or Assessment?</h2>
+      <div class="compare">
+        <div class="compare-card">
+          <p class="label">The Assessment</p>
+          <h3>Across the practice</h3>
+          <p>Written walk-through of your full AI tool stack, sorted on the Zone Model. Delivered as a document within 48 hours. Start here if you cannot name one workflow that worries you specifically, or if you want the broad map first.</p>
+          <p class="price">$97 · Written · 48 hours</p>
+        </div>
+        <div class="compare-card audit">
+          <p class="label">The Audit</p>
+          <h3>Into one workflow</h3>
+          <p>Sixty-minute call covering one specific workflow end to end, with a documented governance recommendation. Start here if you can name the workflow. The Audit is faster if the question is already focused.</p>
+          <p class="price">$297 · 60-min call + write-up</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT MARIA -->
+  <section class="about-maria">
+    <div class="container">
+      <p class="section-label">About</p>
+      <h2 class="section-title">The analyst behind <span class="gold">the audit.</span></h2>
+      <div class="prose">
+        <p>Maria Castro spent thirteen years as a data analyst and quality manager in enterprise technology. She built the systems, wrote the queries, owned the quality, and watched what happens when documentation does not survive the audit.</p>
+        <p>She then became an integrative health practitioner. When AI started entering clinical spaces, she recognized the pattern immediately: practitioners adopting powerful tools without governance frameworks, the same way enterprise systems got integrated without quality management. The same failures, in a different domain.</p>
+        <p>CLEARED exists because that gap needed someone who could speak both languages, practitioner and systems analyst, fluently. The Audit is what happens when that experience is pointed at the one workflow you have been carrying.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Bring the workflow.</h2>
+      <p>Sixty minutes. One specific workflow. A documented governance recommendation within 48 hours of the call.</p>
+      <a href="https://book.stripe.com/https://buy.stripe.com/5kQ28q7TF4CtcKTbv21Jm01" class="cta-btn">Book the Audit — $297</a>
+      <p class="cta-note" style="margin-top: 1.25rem;">Questions? Reach Maria at <a href="mailto:maria@getshgllc.com">maria@getshgllc.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Strategic Health Group, LLC. All rights reserved.<br>CLEARED: AI Practitioner Program · by SHG LLC</p>
+    </div>
+  </footer>
+
+</body>
+</html>
