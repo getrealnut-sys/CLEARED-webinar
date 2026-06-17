@@ -467,7 +467,7 @@
         "name": "How do I subscribe to the CLEARED Intelligence Brief?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Brief publishes weekly on Mondays. Subscribe via LinkedIn Newsletter or access the issue archive at cleared.getshgllc.com/brief/."
+          "text": "The Brief publishes weekly on Mondays. Take the free Self-Audit to join the list, or read the issue archive at cleared.getshgllc.com/brief/."
         }
       }
     ]
@@ -485,6 +485,7 @@
         <li><a href="#work">Practice</a></li>
         <li><a href="#about">Maria</a></li>
         <li><a href="#faq">Questions</a></li>
+        <li><a href="./brief/">Brief</a></li>
         <li><a href="#start">Start</a></li>
       </ul>
     </div>
@@ -512,13 +513,13 @@
 
       <div class="work-cards">
 
-        <!-- Card 1: Intelligence Brief — subscribe CTA -->
+        <!-- Card 1: Intelligence Brief + free Self-Audit & 5-part series -->
         <div class="work-card reveal reveal-delay-1">
-          <p class="card-label">The Brief</p>
+          <p class="card-label">Start free</p>
           <h3>CLEARED Intelligence Brief</h3>
-          <p>Weekly signal tracking on AI governance for health practitioners. Federal action, state legislation, and what each one changes for your practice. Free.</p>
-          <a href="./brief/" class="card-cta">Read the Brief</a>
-          <span class="card-price">Free &middot; Weekly Mondays</span>
+          <p>Weekly signal tracking on AI governance, free. New here? Take the free CHAI Eight-Element Self-Audit, get your gap map, and the free 5-part CLEARED Framework series lands in your inbox. <a href="./brief/">Read the Brief &rarr;</a></p>
+          <a href="#start" class="card-cta">Take the free Self-Audit</a>
+          <span class="card-price">Free &middot; Self-Audit, 5-part series &amp; weekly Brief</span>
         </div>
 
         <!-- Card 2: Assessment — Stripe -->
@@ -631,7 +632,7 @@
         <details class="faq-item">
           <summary>How do I subscribe to the CLEARED Intelligence Brief?</summary>
           <div class="faq-body">
-            The Brief publishes weekly on Mondays. Subscribe via <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7447363904403574784">LinkedIn Newsletter</a> or access the issue archive at <a href="./brief/">cleared.getshgllc.com/brief/</a>.
+            The Brief publishes weekly on Mondays. <a href="#start">Take the free Self-Audit</a> to join the list, or read the archive at <a href="./brief/">cleared.getshgllc.com/brief/</a>.
           </div>
         </details>
 
@@ -643,10 +644,33 @@
   <section class="final-cta" id="start">
     <div class="container">
       <h2>Start where you are.</h2>
-      <p>Read the Brief. Take the Assessment. Book the Audit. The order does not matter. What matters is that documentation discipline begins.</p>
-      <a href="./brief/" class="cta-btn">Read the Brief &rarr;</a>
+      <p>Read the Brief. Take the Self-Audit. Book the Assessment or Audit. The order does not matter. What matters is that documentation discipline begins.</p>
+      <form id="startForm" action="https://assets.mailerlite.com/jsonp/2167859/forms/190547340688361315/subscribe" method="post" target="ml_start_iframe" style="display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;max-width:32em;margin:0 auto;">
+        <input id="startEmail" type="email" name="fields[email]" placeholder="you@yourpractice.com" required aria-label="Email address" style="flex:1;min-width:240px;padding:1rem 1.1rem;border:1px solid rgba(192,160,98,0.4);background:rgba(0,0,0,0.30);color:var(--cream);font-family:'Barlow',sans-serif;font-size:1rem;" />
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
+        <button type="submit" class="cta-btn" style="border:none;cursor:pointer;">Take the Free Self-Audit</button>
+      </form>
+      <p id="startSuccess" style="display:none;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;margin-top:1.2rem;">Check your inbox &mdash; your Self-Audit link and the first Framework email are on the way.</p>
+      <p class="start-note" style="font-size:0.82rem;color:var(--stone-light);margin-top:0.9rem;">Joins the free CLEARED list: the weekly Brief plus the 5-part Framework series. Unsubscribe anytime.</p>
     </div>
   </section>
+  <iframe name="ml_start_iframe" style="display:none" title="signup"></iframe>
+  <script>
+    (function(){
+      var f=document.getElementById('startForm'); if(!f) return;
+      f.addEventListener('submit',function(){
+        var v=(document.getElementById('startEmail').value||'').trim();
+        if(v&&v.indexOf('@')>0&&v.indexOf('.')>0){
+          setTimeout(function(){
+            f.style.display='none';
+            var n=document.querySelector('.start-note'); if(n)n.style.display='none';
+            document.getElementById('startSuccess').style.display='block';
+          },500);
+        }
+      });
+    })();
+  </script>
 
   <footer>
     <div class="container">

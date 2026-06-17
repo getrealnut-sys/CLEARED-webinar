@@ -242,10 +242,26 @@
     font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem;
   }
 
+  /* ---- OPT-IN (5-part series) ---- */
+  .optin { background: linear-gradient(180deg, rgba(192,160,98,0.10), rgba(192,160,98,0.03)); border: 1px solid var(--gold); border-radius: 5px; padding: 1.8rem 1.6rem; margin: 2rem 0 0; }
+  .optin .optin-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.74rem; color: var(--gold); margin-bottom: 0.5rem; }
+  .optin h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.6rem; line-height: 1.15; color: var(--cream); margin-bottom: 0.5rem; }
+  .optin p { color: var(--stone-light); font-size: 0.98rem; margin-bottom: 1.1rem; }
+  .optin-form { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .optin-input { flex: 1; min-width: 220px; padding: 0.85rem 1rem; border-radius: 4px; border: 1px solid var(--gold-line); background: rgba(0,0,0,0.28); color: var(--cream); font-family: 'Barlow', sans-serif; font-size: 1rem; }
+  .optin-input::placeholder { color: var(--stone-light); }
+  .optin-input:focus { outline: none; border-color: var(--gold); }
+  .optin-btn { padding: 0.85rem 1.6rem; border-radius: 4px; border: 1px solid var(--gold); background: var(--gold); color: var(--ink); cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; transition: transform 0.15s ease; }
+  .optin-btn:hover { transform: translateY(-1px); }
+  .optin-note { font-size: 0.8rem; color: var(--stone-light); margin-top: 0.7rem; }
+  .optin-success { display: none; }
+  .optin.done .optin-form, .optin.done .optin-note { display: none; }
+  .optin.done .optin-success { display: block; color: var(--green); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; }
+
   /* ---- PRINT ---- */
   @media print {
     body { background: #fff; color: #1a1814; background-image: none; }
-    .progress-bar, .audit, .intro .source-note, .cta-row, .print-link, .reveal-prompt { display: none !important; }
+    .progress-bar, .audit, .intro .source-note, .cta-row, .print-link, .reveal-prompt, .optin { display: none !important; }
     .results { display: block !important; }
     .gap-name, .results-head h2, .close-note .lead { color: #1a1814; }
     .close-note { border-color: #c0a062; background: #faf7f0; }
@@ -293,8 +309,8 @@
     <div class="close-note" id="closeNote"></div>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7447363904403574784" target="_blank" rel="noopener">Get the weekly Brief</a>
-      <a class="btn btn-ghost" href="https://cleared.getshgllc.com/cleared-assessment/" target="_blank" rel="noopener">Walk it through — Assessment $97</a>
+      <a class="btn btn-primary" href="https://cleared.getshgllc.com/cleared-assessment/" target="_blank" rel="noopener">Walk it through — Assessment $97</a>
+      <a class="btn btn-ghost" href="https://cleared.getshgllc.com/cleared-audit/" target="_blank" rel="noopener">Go deep — Audit $297</a>
     </div>
     <div style="text-align:center;">
       <button class="print-link" onclick="window.print()">Save or print your gap map →</button>
