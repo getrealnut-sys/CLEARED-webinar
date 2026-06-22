@@ -299,4 +299,16 @@
     })();
 
     // Smooth scroll for in-page anchors
-    document.que
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(ev){
+        var id = this.getAttribute('href').slice(1);
+        if (!id) return;
+        var el = document.getElementById(id);
+        if (!el) return;
+        ev.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
