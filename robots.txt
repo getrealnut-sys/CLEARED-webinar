@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /cleared-assessment/thank-you/
+Disallow: /cleared-audit/thank-you/
+
+Sitemap: https://cleared.getshgllc.com/sitemap.xml
