@@ -3,728 +3,535 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLEARED | AI Governance for Health Practitioners | Strategic Health Group, LLC</title>
-  <meta name="description" content="CLEARED is the AI governance practice for health and wellness practitioners. Published by Strategic Health Group, LLC. Founded by Maria Castro." />
-
+  <title>The CLEARED Intelligence Brief | Strategic Health Group</title>
+  <meta name="description" content="The practitioner's briefing on AI governance for solo and small health practices. Real signals, pattern analysis, one actionable step. Every Monday." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
-
   <style>
-    /* Self-contained — all styling lives in this file.
-       Design tokens match CLEARED brief issue pages (gold/cream/ink). */
-
-    :root {
-      --gold: #c0a062;
-      --cream: #f5f0e6;
-      --stone-light: #a89f8e;
-      --ink: #1a1814;
+    /* CLEARED Intelligence Brief hub — design tokens & motion match cleared.getshgllc.com */
+    :root { --gold: #c0a062; --cream: #f5f0e6; --stone-light: #a89f8e; --ink: #1a1814; }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--ink); color: var(--cream);
+      font-family: 'Barlow', sans-serif; margin: 0; line-height: 1.55;
+      background-image: radial-gradient(ellipse 80% 50% at 50% -8%, rgba(192,160,98,0.10), transparent 60%);
+      background-repeat: no-repeat;
     }
-
-    body { background: var(--ink); color: var(--cream); font-family: 'Barlow', sans-serif; margin: 0; line-height: 1.55; }
     .container { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
     a { color: var(--gold); }
 
-    /* HERO */
-    .hero {
-      padding: 5.5rem 0 4rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(192, 160, 98, 0.18);
-    }
-    .hero .eyebrow {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-size: 0.82rem;
-      color: var(--gold);
-      margin: 0 0 1.5rem 0;
-    }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      line-height: 1.05;
-      margin: 0 0 1.5rem 0;
-    }
-    .hero h1 .gold { color: var(--gold); font-style: italic; }
-    .hero .direct-answer {
-      max-width: 38em;
-      margin: 0 auto;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      line-height: 1.55;
-      color: var(--stone-light);
-      font-style: italic;
-    }
-
-    /* SECTION HEADERS */
-    section { padding: 4rem 0; }
-    .section-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      color: var(--gold);
-      text-align: center;
-      margin: 0 0 0.75rem 0;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      line-height: 1.15;
-      text-align: center;
-      margin: 0 0 2.5rem 0;
-    }
-
-    /* WHERE THIS WORK SHOWS UP — 3 cards */
-    .work-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .work-card {
-      background: rgba(192, 160, 98, 0.04);
-      border: 1px solid rgba(192, 160, 98, 0.18);
-      border-radius: 4px;
-      padding: 2rem 1.75rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .work-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(192, 160, 98, 0.45);
-    }
-    .work-card .card-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      color: var(--gold);
-      margin-bottom: 0.85rem;
-    }
-    .work-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.6rem;
-      margin: 0 0 1rem 0;
-      color: var(--cream);
-    }
-    .work-card p {
-      font-size: 0.96rem;
-      color: var(--stone-light);
-      margin: 0 0 1.5rem 0;
-    }
-    .work-card .card-cta {
-      display: inline-block;
-      padding: 0.75rem 1.4rem;
-      background: var(--gold);
-      color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      text-decoration: none;
-    }
-    .work-card .card-price {
-      display: block;
-      margin-top: 0.75rem;
-      font-size: 0.85rem;
-      color: var(--stone-light);
-    }
-
-    /* ABOUT MARIA */
-    .about { background: rgba(192, 160, 98, 0.03); }
-    .about .about-body {
-      max-width: 38em;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      color: var(--cream);
-    }
-    .about .about-body p { margin: 0 0 1.25rem 0; }
-    .about .about-body p:last-child { margin-bottom: 0; }
-    .about .credentials {
-      text-align: center;
-      margin-top: 2rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      color: var(--stone-light);
-    }
-
-    /* FAQ ACCORDION */
-    .faq {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    details.faq-item {
-      border-bottom: 1px solid rgba(192, 160, 98, 0.18);
-      padding: 1.25rem 0;
-    }
-    details.faq-item summary {
-      cursor: pointer;
-      list-style: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--cream);
-      padding-right: 2rem;
-      position: relative;
-    }
-    details.faq-item summary::-webkit-details-marker { display: none; }
-    details.faq-item summary::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-family: 'Barlow', sans-serif;
-      font-weight: 300;
-      color: var(--gold);
-      font-size: 1.5rem;
-      transition: transform 0.2s ease;
-    }
-    details.faq-item[open] summary::after {
-      content: '\2212';  /* en-dash for "−" */
-    }
-    details.faq-item .faq-body {
-      padding-top: 1rem;
-      font-size: 0.98rem;
-      color: var(--stone-light);
-      line-height: 1.6;
-    }
-
-    /* FINAL CTA */
-    .final-cta {
-      text-align: center;
-      padding: 4.5rem 0;
-      border-top: 1px solid rgba(192, 160, 98, 0.18);
-    }
-    .final-cta h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin: 0 0 1rem 0;
-    }
-    .final-cta p {
-      color: var(--stone-light);
-      max-width: 30em;
-      margin: 0 auto 2rem;
-    }
-    .final-cta .cta-btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      background: var(--gold);
-      color: var(--ink);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-size: 1rem;
-      text-decoration: none;
-    }
-
-    footer {
-      padding: 3rem 0 2rem;
-      text-align: center;
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.88rem;
-      color: var(--stone-light);
-      border-top: 1px solid rgba(192, 160, 98, 0.12);
-    }
-    footer a { color: var(--gold); }
-    .footer-scripture {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      color: var(--stone-light);
-      margin-top: 1rem;
-    }
-
     /* ───── STICKY NAV ───── */
     .sticky-nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 50;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
       background: rgba(26, 24, 20, 0.78);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(192, 160, 98, 0.18);
       transform: translateY(-100%);
       transition: transform 0.4s cubic-bezier(.4,0,.2,1);
     }
     .sticky-nav.visible { transform: translateY(0); }
-    .sticky-nav .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.9rem 1.5rem;
-    }
-    .sticky-nav .nav-brand {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      color: var(--gold);
-      text-decoration: none;
-    }
-    .sticky-nav .nav-links {
-      display: flex;
-      gap: 1.75rem;
-      list-style: none;
-      margin: 0; padding: 0;
-    }
-    .sticky-nav .nav-links a {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      color: var(--stone-light);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
+    .sticky-nav .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.5rem; }
+    .sticky-nav .nav-brand { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.95rem; color: var(--gold); text-decoration: none; }
+    .sticky-nav .nav-links { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+    .sticky-nav .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.78rem; color: var(--stone-light); text-decoration: none; transition: color 0.2s ease; }
     .sticky-nav .nav-links a:hover { color: var(--cream); }
-    .sticky-nav .nav-progress {
-      height: 2px;
-      width: 0%;
-      background: var(--gold);
-      transition: width 0.1s linear;
-    }
-    @media (max-width: 560px) {
-      .sticky-nav .nav-links { gap: 0.9rem; }
-      .sticky-nav .nav-links a { font-size: 0.72rem; letter-spacing: 0.08em; }
-    }
+    .sticky-nav .nav-progress { height: 2px; width: 0%; background: var(--gold); transition: width 0.1s linear; }
+    @media (max-width: 560px) { .sticky-nav .nav-links { gap: 0.9rem; } .sticky-nav .nav-links a { font-size: 0.72rem; letter-spacing: 0.08em; } }
+
+    /* ───── HERO ───── */
+    .hero { padding: 5.5rem 0 3.5rem; text-align: center; border-bottom: 1px solid rgba(192, 160, 98, 0.18); }
+    .hero .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.82rem; color: var(--gold); margin: 0 0 1.5rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; margin: 0 0 1.5rem; }
+    .hero h1 .gold { color: var(--gold); font-style: italic; }
+    .hero .lede { max-width: 38em; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.55; color: var(--stone-light); font-style: italic; }
+
+    section { padding: 4rem 0; }
+    .section-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.78rem; color: var(--gold); text-align: center; margin: 0 0 2rem; }
+
+    /* ───── CURRENT ISSUE ───── */
+    .current-issue-card { max-width: 640px; margin: 0 auto; text-align: center; background: rgba(192, 160, 98, 0.06); border: 1px solid rgba(192, 160, 98, 0.35); border-radius: 5px; padding: 2.6rem 2rem; }
+    .current-issue-meta { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.78rem; color: var(--gold); margin: 0 0 0.9rem; }
+    .current-issue-description { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(1.7rem, 3.5vw, 2.3rem); line-height: 1.15; color: var(--cream); margin: 0 0 1.6rem; }
+    .current-issue-cta { display: inline-block; padding: 0.9rem 2rem; background: var(--gold); color: var(--ink); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; text-decoration: none; }
+
+    /* ───── ARCHIVE GRID ───── */
+    .archive-section { background: rgba(192, 160, 98, 0.03); }
+    .archive-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .archive-item { display: flex; flex-direction: column; justify-content: space-between; gap: 1.2rem; background: rgba(192, 160, 98, 0.04); border: 1px solid rgba(192, 160, 98, 0.18); border-radius: 4px; padding: 1.6rem 1.5rem; transition: transform 0.2s ease, border-color 0.2s ease; }
+    .archive-item:hover { transform: translateY(-3px); border-color: rgba(192, 160, 98, 0.45); }
+    .archive-meta { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.74rem; color: var(--gold); margin: 0 0 0.6rem; }
+    .archive-description { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.2; color: var(--cream); margin: 0; }
+    .archive-link { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem; color: var(--gold); text-decoration: none; align-self: flex-start; }
+    .archive-link:hover { color: var(--cream); }
+
+    /* ───── SUBSCRIBE CTA ───── */
+    .subscribe-cta { text-align: center; border-top: 1px solid rgba(192, 160, 98, 0.18); }
+    .subscribe-cta h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 1rem; }
+    .subscribe-cta p { color: var(--stone-light); max-width: 32em; margin: 0 auto 2rem; }
+    .subscribe-cta .cta-btn { display: inline-block; padding: 1rem 2.5rem; background: var(--gold); color: var(--ink); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 1rem; text-decoration: none; }
+
+    footer { padding: 3rem 0 2rem; text-align: center; font-family: 'Barlow', sans-serif; font-size: 0.88rem; color: var(--stone-light); border-top: 1px solid rgba(192, 160, 98, 0.12); }
+    footer a { color: var(--gold); }
+    .footer-scripture { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--stone-light); margin-top: 1rem; }
 
     /* ───── SCROLL REVEAL ───── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(.4,0,.2,1),
-                  transform 0.7s cubic-bezier(.4,0,.2,1);
-      will-change: opacity, transform;
-    }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.08s; }
-    .reveal-delay-2 { transition-delay: 0.16s; }
-    .reveal-delay-3 { transition-delay: 0.24s; }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .sticky-nav { transition: none; }
-    }
-
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1); will-change: opacity, transform; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.08s; } .reveal-delay-2 { transition-delay: 0.16s; } .reveal-delay-3 { transition-delay: 0.24s; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .sticky-nav { transition: none; } }
   </style>
-
-  <!-- AEO SCHEMA — Decision #62 Phase 1: Organization, Person, WebSite, FAQPage -->
-
-  <link rel="canonical" href="https://cleared.getshgllc.com/" />
+  <link rel="canonical" href="https://cleared.getshgllc.com/brief/" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://cleared.getshgllc.com/#organization",
-    "name": "Strategic Health Group, LLC",
-    "alternateName": "SHG, LLC",
-    "url": "https://cleared.getshgllc.com/",
-    "foundingDate": "2025-12-18",
-    "founder": {
-      "@id": "https://cleared.getshgllc.com/#maria-castro"
+    "@type": "CollectionPage",
+    "@id": "https://cleared.getshgllc.com/brief/#collection",
+    "name": "The CLEARED Intelligence Brief",
+    "url": "https://cleared.getshgllc.com/brief/",
+    "description": "The practitioner's briefing on AI governance for solo and small health practices.",
+    "isPartOf": {
+      "@id": "https://cleared.getshgllc.com/#website"
     },
-    "areaServed": "US",
-    "knowsAbout": [
-      "AI governance for health practitioners",
-      "Red Zone Model",
-      "Human Authority Filter",
-      "Documentation Discipline",
-      "Healthcare AI compliance",
-      "Clinical AI disclosure"
-    ],
-    "sameAs": [
-      "https://www.linkedin.com/in/coachmariap"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://cleared.getshgllc.com/#maria-castro",
-    "name": "Maria Castro",
-    "alternateName": "Coach Maria",
-    "jobTitle": "Founder, Strategic Health Group, LLC",
-    "description": "13 years enterprise data analysis and quality management; integrative health practice. Founder of Strategic Health Group, LLC and the CLEARED governance practice for health and wellness practitioners.",
-    "worksFor": {
-      "@id": "https://cleared.getshgllc.com/#organization"
-    },
-    "sameAs": "https://www.linkedin.com/in/coachmariap"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://cleared.getshgllc.com/#website",
-    "url": "https://cleared.getshgllc.com/",
-    "name": "CLEARED",
     "publisher": {
       "@id": "https://cleared.getshgllc.com/#organization"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "AI governance in health practice"
+      },
+      {
+        "@type": "Thing",
+        "name": "Clinical AI compliance"
+      }
+    ],
+    "mainEntity": {
+      "@type": "Periodical",
+      "@id": "https://cleared.getshgllc.com/brief/#periodical",
+      "name": "CLEARED Intelligence Brief",
+      "url": "https://cleared.getshgllc.com/brief/",
+      "publisher": {
+        "@id": "https://cleared.getshgllc.com/#organization"
+      }
+    },
+    "hasPart": {
+      "@type": "ItemList",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 21,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://cleared.getshgllc.com/brief/issue-021.html",
+          "name": "They Told the Machine Before They Told You"
+        },
+        {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://cleared.getshgllc.com/brief/issue-020.html",
+              "name": "They Examined the Records, Not the AI"
+            },
+            {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://cleared.getshgllc.com/brief/issue-019.html",
+          "name": "The New AI Rules Point at You, Not at the Software"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://cleared.getshgllc.com/brief/issue-018.html",
+          "name": "Washington Accelerates AI. The States Referee It."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://cleared.getshgllc.com/brief/issue-017.html",
+          "name": "Nobody Is Coming to Govern Your AI for You"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://cleared.getshgllc.com/brief/issue-016.html",
+          "name": "The FDA Cleared the Interface, Not the Intelligence"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://cleared.getshgllc.com/brief/issue-015.html",
+          "name": "The AI Rules Stopped Being Proposals on July 1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://cleared.getshgllc.com/brief/issue-014.html",
+          "name": "AI Is Writing the Record Now, and You Still Sign It"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://cleared.getshgllc.com/brief/issue-013.html",
+          "name": "AI Is Now Deciding Coverage, and the Pushback Is Organized"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "url": "https://cleared.getshgllc.com/brief/issue-012.html",
+          "name": "The First AI Certification Certifies You, Not the Tool"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "url": "https://cleared.getshgllc.com/brief/issue-011.html",
+          "name": "The Liability Is Yours Now"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "url": "https://cleared.getshgllc.com/brief/issue-010.html",
+          "name": "The Governance Standard Is Now Written"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "url": "https://cleared.getshgllc.com/brief/issue-009.html",
+          "name": "When Governance Becomes an Audit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "url": "https://cleared.getshgllc.com/brief/issue-008.html",
+          "name": "AI Governance Is Now a Reimbursement Question"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "url": "https://cleared.getshgllc.com/brief/issue-007.html",
+          "name": "AI's Three Tiers and the Procurement Gap"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "url": "https://cleared.getshgllc.com/brief/issue-006.html",
+          "name": "HHS Released a Clinical AI Acceleration Request for Information on April 30, 2026"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "url": "https://cleared.getshgllc.com/brief/issue-005.html",
+          "name": "WHO/Europe Published the First-Ever Cross-Government Snapshot of AI in Clinical Practice — All 27 EU Member States Are Already Deploying It (April 20, 2026) [Witness]"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "url": "https://cleared.getshgllc.com/brief/issue-004.html",
+          "name": "AI Fails Differential Diagnosis 80%+ of the Time — New JAMA Study [WARN]"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "url": "https://cleared.getshgllc.com/brief/issue-003.html",
+          "name": "CLEARED Intelligence Brief Issue 003"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "url": "https://cleared.getshgllc.com/brief/issue-002.html",
+          "name": "Penn Medicine Faculty Call Out \"Holes\" in FDA's AI Device Oversight"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "url": "https://cleared.getshgllc.com/brief/issue-001.html",
+          "name": "CEO of America's Largest Public Hospital System Says He Is Ready to Replace Radiologists with AI"
+        }
+      ]
     }
   }
   </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Who is CLEARED for?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Health and wellness practitioners using AI tools in client-facing work. Board-certified health coaches, integrative practitioners, NBHWC-certified coaches, and holistic clinicians who need a defensible governance practice that survives a regulatory audit."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the Red/Yellow/Green Zone Model?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A framework for sorting AI use in practice by risk exposure. Green Zone: AI use that does not touch clinical content or protected health information. Yellow Zone: AI use that touches client-facing content without generating clinical recommendations. Red Zone: AI use that intersects with PHI, clinical decisions, or content reaching clients without human review. Strategic Health Group documented the framework first."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the Human Authority Filter?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The principle that no AI output reaches a client without a credentialed human review checkpoint. The Filter is not a tool. It is the practice you build around your AI use to keep the practitioner accountable for what reaches the client."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is Documentation Discipline?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The practice of recording what came from the AI tool, what came from your training, and what synthesis happened in between. It is the documentation standard that survives a five-year audit because it shows the human reasoning behind every output."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to disclose AI use to my clients?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Increasingly, yes. The question is no longer whether disclosure is good practice. It is whether your current documentation satisfies the legal standard where your clients are located. Several states, including Washington, Maine, Vermont, and soon Louisiana, have moved from voluntary to required disclosure. The CLEARED Intelligence Brief tracks state-by-state changes weekly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between the CLEARED Assessment and the AI Workflow Audit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Assessment ($97) is a written walk-through of where your current AI use sits on the Red/Yellow/Green Zone Model, delivered within 48 hours. The AI Workflow Audit ($297) is a 60-minute call covering one specific workflow end-to-end, with a documented governance recommendation you can act on."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is CLEARED HIPAA training?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. HIPAA training covers protected health information at the technical and operational level. CLEARED covers practitioner-level AI governance. How you decide whether an AI tool belongs in a workflow, how you document its use, and how you maintain the human authority filter. The two are complementary, not interchangeable."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my AI vendor's compliance posture cover me?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Vendor compliance covers the vendor. Practitioner responsibility for what the AI produces and how it reaches the client stays with the practitioner. A Business Associate Agreement with your transcription tool does not substitute for a documented governance practice on your side."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if I do not currently use AI in my practice, does any of this apply?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If you do not use AI at all, the disclosure requirements do not apply to you. Audit requirements that flow from federal funding still do. And the practitioners around you are using AI, which shapes the standard your clients increasingly expect."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I subscribe to the CLEARED Intelligence Brief?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Brief publishes weekly on Mondays. Take the free Self-Audit to join the list, or read the issue archive at cleared.getshgllc.com/brief/."
-        }
-      }
-    ]
-  }
-  </script>
 </head>
+<body id="top">
 
-<body>
-
-  <!-- STICKY NAV — progress strip + section jump links -->
   <nav class="sticky-nav" id="stickyNav">
-    <div class="container nav-inner">
-      <a href="#top" class="nav-brand">CLEARED</a>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">CLEARED</a>
       <ul class="nav-links">
-        <li><a href="#work">Practice</a></li>
-        <li><a href="#about">Maria</a></li>
-        <li><a href="#faq">Questions</a></li>
-        <li><a href="./brief/">Brief</a></li>
-        <li><a href="#start">Start</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#archive">Issues</a></li>
+        <li><a href="../index.html#start">Subscribe</a></li>
       </ul>
     </div>
     <div class="nav-progress" id="navProgress"></div>
   </nav>
 
-  <a id="top"></a>
-
-  <!-- HERO — felt-problem direct-answer, 60 words, schema-eligible -->
   <header class="hero">
     <div class="container">
-      <p class="eyebrow">Strategic Health Group, LLC</p>
-      <h1>AI governance<br>for the practice<br>you already <span class="gold">run.</span></h1>
-      <p class="direct-answer">
-        You are using AI tools in your practice. State laws are enacting binding disclosure requirements. Federal audits are running on five years of records. The question is not whether you have an AI policy. It is whether your documentation survives a five-year review.
-      </p>
+      <p class="eyebrow">The CLEARED Intelligence Brief</p>
+      <h1>Signal tracking for<br><span class="gold">practitioners paying attention.</span></h1>
+      <p class="lede">The practitioner&rsquo;s briefing on AI governance for solo and small health practices. Real signals, pattern analysis, one actionable step. Every Monday.</p>
     </div>
   </header>
 
-  <!-- WHERE THIS WORK SHOWS UP — 3 cards, contextual CTAs -->
-  <section id="work">
+  <section class="current-section">
     <div class="container">
-      <p class="section-label reveal">Where this work shows up</p>
-      <h2 class="section-title reveal reveal-delay-1">Three doors. Same governance practice.</h2>
-
-      <div class="work-cards">
-
-        <!-- Card 1: Intelligence Brief + free Self-Audit & 5-part series -->
-        <div class="work-card reveal reveal-delay-1">
-          <p class="card-label">Start free</p>
-          <h3>CLEARED Intelligence Brief</h3>
-          <p>Weekly signal tracking on AI governance, free. New here? Take the free CHAI Eight-Element Self-Audit, get your gap map, and the free 5-part CLEARED Framework series lands in your inbox. <a href="./brief/">Read the Brief &rarr;</a></p>
-          <a href="#start" class="card-cta">Take the free Self-Audit</a>
-          <span class="card-price">Free &middot; Self-Audit, 5-part series &amp; weekly Brief</span>
-        </div>
-
-        <!-- Card 2: Assessment — Stripe -->
-        <div class="work-card reveal reveal-delay-2">
-          <p class="card-label">The Assessment</p>
-          <h3>CLEARED Assessment</h3>
-          <p>A written walk-through of where your current AI use sits on the Red/Yellow/Green Zone Model. Delivered within 48 hours.</p>
-          <a href="./cleared-assessment/" class="card-cta">Start the Assessment</a>
-          <span class="card-price">$97 &middot; One-time</span>
-        </div>
-
-        <!-- Card 3: Workflow Audit — Stripe-live, points to /cleared-audit/ -->
-        <div class="work-card reveal reveal-delay-3">
-          <p class="card-label">The Audit</p>
-          <h3>AI Workflow Audit</h3>
-          <p>A 60-minute call covering one specific workflow end-to-end, with a documented governance recommendation you can act on.</p>
-          <a href="./cleared-audit/" class="card-cta">Book the Audit</a>
-          <span class="card-price">$297 &middot; 60-minute call</span>
-        </div>
-
+      <p class="section-label reveal">Current Issue</p>
+      <!-- CURRENT-ISSUE-BLOCK -->
+      <div class="current-issue-card reveal reveal-delay-1">
+        <p class="current-issue-meta">Issue 021 &middot; August 17, 2026</p>
+        <p class="current-issue-description">They Told the Machine Before They Told You</p>
+        <a href="./issue-021.html" class="current-issue-cta">Read Issue 021 &rarr;</a>
       </div>
+      <!-- /CURRENT-ISSUE-BLOCK -->
     </div>
   </section>
 
-  <!-- ABOUT MARIA — Person schema lives here -->
-  <section class="about" id="about">
+  <section class="archive-section" id="archive">
     <div class="container">
-      <p class="section-label reveal">About the practitioner</p>
-      <h2 class="section-title reveal reveal-delay-1">Maria Castro</h2>
-      <div class="about-body reveal reveal-delay-2">
-        <p>I spent thirteen years inside enterprise data. I built the systems, wrote the queries, owned the quality, and watched what happens when documentation does not survive the audit.</p>
-        <p>I built Strategic Health Group, LLC because the same governance discipline that protected $40 billion in transactions at the enterprise level is now what every health practitioner using AI needs and almost nobody is teaching.</p>
-        <p>CLEARED is the practice. The Brief is how I document the signal. The Assessment and the Audit are how I walk one practitioner at a time through their own exposure.</p>
-      </div>
-      <p class="credentials reveal reveal-delay-3">13 years enterprise data &middot; Integrative health practice &middot; Strategic Health Group, LLC</p>
+      <p class="section-label reveal">Previous Issues</p>
+      <ul class="archive-list" id="archive-list">
+
+        <!-- Issue 020 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 020 &middot; August 10, 2026</p>
+            <p class="archive-description">They Examined the Records, Not the AI</p>
+          </div>
+          <a href="./issue-020.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 019 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 019 &middot; August 3, 2026</p>
+            <p class="archive-description">The New AI Rules Point at You, Not at the Software</p>
+          </div>
+          <a href="./issue-019.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 018 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 018 &middot; July 27, 2026</p>
+            <p class="archive-description">Washington Accelerates AI. The States Referee It.</p>
+          </div>
+          <a href="./issue-018.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 017 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 017 &middot; July 20, 2026</p>
+            <p class="archive-description">Nobody Is Coming to Govern Your AI for You</p>
+          </div>
+          <a href="./issue-017.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 016 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 016 &middot; July 13, 2026</p>
+            <p class="archive-description">The FDA Cleared the Interface, Not the Intelligence</p>
+          </div>
+          <a href="./issue-016.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 015 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 015 &middot; July 6, 2026</p>
+            <p class="archive-description">The AI Rules Stopped Being Proposals on July 1</p>
+          </div>
+          <a href="./issue-015.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 014 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 014 &middot; June 29, 2026</p>
+            <p class="archive-description">AI Is Writing the Record Now, and You Still Sign It</p>
+          </div>
+          <a href="./issue-014.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 013 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 013 &middot; June 22, 2026</p>
+            <p class="archive-description">AI Is Now Deciding Coverage, and the Pushback Is Organized</p>
+          </div>
+          <a href="./issue-013.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 012 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 012 &middot; June 15, 2026</p>
+            <p class="archive-description">The First AI Certification Certifies You, Not the Tool</p>
+          </div>
+          <a href="./issue-012.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 011 -->
+        <li class="archive-item reveal reveal-delay-1">
+          <div>
+            <p class="archive-meta">Issue 011 &middot; June 9, 2026</p>
+            <p class="archive-description">The Liability Is Yours Now</p>
+          </div>
+          <a href="./issue-011.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 010 -->
+        <li class="archive-item reveal reveal-delay-1">
+          <div>
+            <p class="archive-meta">Issue 010 &middot; June 1, 2026</p>
+            <p class="archive-description">The Governance Standard Is Now Written</p>
+          </div>
+          <a href="./issue-010.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 009 -->
+        <li class="archive-item reveal reveal-delay-2">
+          <div>
+            <p class="archive-meta">Issue 009 &middot; May 26, 2026</p>
+            <p class="archive-description">When Governance Becomes an Audit</p>
+          </div>
+          <a href="./issue-009.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 008 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 008 &middot; May 18, 2026</p>
+            <p class="archive-description">AI Governance Is Now a Reimbursement Question</p>
+          </div>
+          <a href="./issue-008.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 007 -->
+        <li class="archive-item reveal reveal-delay-1">
+          <div>
+            <p class="archive-meta">Issue 007 &middot; May 11, 2026</p>
+            <p class="archive-description">AI&#39;s Three Tiers and the Procurement Gap</p>
+          </div>
+          <a href="./issue-007.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 006 -->
+        <li class="archive-item reveal reveal-delay-2">
+          <div>
+            <p class="archive-meta">Issue 006 &middot; May 4, 2026</p>
+            <p class="archive-description">HHS Released a Clinical AI Acceleration Request for Information on April 30, 2026</p>
+          </div>
+          <a href="./issue-006.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 005 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 005 &middot; April 28, 2026</p>
+            <p class="archive-description">WHO/Europe documents AI deployment across all 27 EU member states as the governance gap widens at home and abroad</p>
+          </div>
+          <a href="./issue-005.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 004 -->
+        <li class="archive-item reveal reveal-delay-1">
+          <div>
+            <p class="archive-meta">Issue 004 &middot; April 20, 2026</p>
+            <p class="archive-description">Twenty-one leading language models failed clinical reasoning more than 80% of the time when information was incomplete</p>
+          </div>
+          <a href="./issue-004.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 003 -->
+        <li class="archive-item reveal reveal-delay-2">
+          <div>
+            <p class="archive-meta">Issue 003 &middot; April 13, 2026</p>
+            <p class="archive-description">Penn Medicine Faculty Call Out &ldquo;Holes&rdquo; in FDA&#39;s AI Device Oversight</p>
+          </div>
+          <a href="./issue-003.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 002 -->
+        <li class="archive-item reveal">
+          <div>
+            <p class="archive-meta">Issue 002 &middot; April 7, 2026</p>
+            <p class="archive-description">FDA oversight gaps, HHS AI adoption push, state-level disclosure laws, and Joint Commission certification preview.</p>
+          </div>
+          <a href="./issue-002.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+        <!-- Issue 001 -->
+        <li class="archive-item reveal reveal-delay-1">
+          <div>
+            <p class="archive-meta">Issue 001 &middot; April 1, 2026</p>
+            <p class="archive-description">Hospital CEO ready to replace radiologists with AI, FDA relaxes oversight, WHO mental health warning, and Penn State liability research.</p>
+          </div>
+          <a href="./issue-001.html" class="archive-link">Read issue &rarr;</a>
+        </li>
+
+      </ul>
     </div>
   </section>
 
-  <!-- FAQ ACCORDION — 10 Q&A, FAQPage schema mirrors above -->
-  <section id="faq">
+  <section class="subscribe-cta" id="subscribe">
     <div class="container">
-      <p class="section-label reveal">Questions</p>
-      <h2 class="section-title reveal reveal-delay-1">What practitioners ask first</h2>
-
-      <div class="faq">
-
-        <details class="faq-item">
-          <summary>Who is CLEARED for?</summary>
-          <div class="faq-body">
-            Health and wellness practitioners using AI tools in client-facing work. Board-certified health coaches, integrative practitioners, NBHWC-certified coaches, and holistic clinicians who need a defensible governance practice that survives a regulatory audit.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the Red/Yellow/Green Zone Model?</summary>
-          <div class="faq-body">
-            A framework for sorting AI use in practice by risk exposure. Green Zone: AI use that does not touch clinical content or protected health information. Yellow Zone: AI use that touches client-facing content without generating clinical recommendations. Red Zone: AI use that intersects with PHI, clinical decisions, or content reaching clients without human review. Strategic Health Group documented the framework first.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the Human Authority Filter?</summary>
-          <div class="faq-body">
-            The principle that no AI output reaches a client without a credentialed human review checkpoint. The Filter is not a tool. It is the practice you build around your AI use to keep the practitioner accountable for what reaches the client.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is Documentation Discipline?</summary>
-          <div class="faq-body">
-            The practice of recording what came from the AI tool, what came from your training, and what synthesis happened in between. It is the documentation standard that survives a five-year audit because it shows the human reasoning behind every output.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do I need to disclose AI use to my clients?</summary>
-          <div class="faq-body">
-            Increasingly, yes. The question is no longer whether disclosure is good practice. It is whether your current documentation satisfies the legal standard where your clients are located. Several states, including Washington, Maine, Vermont, and soon Louisiana, have moved from voluntary to required disclosure. The CLEARED Intelligence Brief tracks state-by-state changes weekly.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the difference between the CLEARED Assessment and the AI Workflow Audit?</summary>
-          <div class="faq-body">
-            The Assessment ($97) is a written walk-through of where your current AI use sits on the Red/Yellow/Green Zone Model, delivered within 48 hours. The AI Workflow Audit ($297) is a 60-minute call covering one specific workflow end-to-end, with a documented governance recommendation you can act on.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is CLEARED HIPAA training?</summary>
-          <div class="faq-body">
-            No. HIPAA training covers protected health information at the technical and operational level. CLEARED covers practitioner-level AI governance. How you decide whether an AI tool belongs in a workflow, how you document its use, and how you maintain the human authority filter. The two are complementary, not interchangeable.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Will my AI vendor's compliance posture cover me?</summary>
-          <div class="faq-body">
-            Vendor compliance covers the vendor. Practitioner responsibility for what the AI produces and how it reaches the client stays with the practitioner. A Business Associate Agreement with your transcription tool does not substitute for a documented governance practice on your side.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What if I do not currently use AI in my practice, does any of this apply?</summary>
-          <div class="faq-body">
-            If you do not use AI at all, the disclosure requirements do not apply to you. Audit requirements that flow from federal funding still do. And the practitioners around you are using AI, which shapes the standard your clients increasingly expect.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How do I subscribe to the CLEARED Intelligence Brief?</summary>
-          <div class="faq-body">
-            The Brief publishes weekly on Mondays. <a href="#start">Take the free Self-Audit</a> to join the list, or read the archive at <a href="./brief/">cleared.getshgllc.com/brief/</a>.
-          </div>
-        </details>
-
-      </div>
+      <h2 class="reveal">Get this in your inbox every Monday.</h2>
+      <p class="reveal reveal-delay-1">Signal tracking for practitioners who are paying attention. Take the free Self-Audit to join the list, then the weekly Brief and the 5-part CLEARED Framework series land in your inbox.</p>
+      <a href="../index.html#start" class="cta-btn reveal reveal-delay-2">Take the Free Self-Audit &rarr;</a>
     </div>
   </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta" id="start">
-    <div class="container">
-      <h2>Start where you are.</h2>
-      <p>Read the Brief. Take the Self-Audit. Book the Assessment or Audit. The order does not matter. What matters is that documentation discipline begins.</p>
-      <form id="startForm" action="https://assets.mailerlite.com/jsonp/2167859/forms/190547340688361315/subscribe" method="post" target="ml_start_iframe" style="display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;max-width:32em;margin:0 auto;">
-        <input id="startEmail" type="email" name="fields[email]" placeholder="you@yourpractice.com" required aria-label="Email address" style="flex:1;min-width:240px;padding:1rem 1.1rem;border:1px solid rgba(192,160,98,0.4);background:rgba(0,0,0,0.30);color:var(--cream);font-family:'Barlow',sans-serif;font-size:1rem;" />
-        <input type="hidden" name="ml-submit" value="1" />
-        <input type="hidden" name="anticsrf" value="true" />
-        <button type="submit" class="cta-btn" style="border:none;cursor:pointer;">Take the Free Self-Audit</button>
-      </form>
-      <p id="startSuccess" style="display:none;color:var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;margin-top:1.2rem;">Check your inbox &mdash; your Self-Audit link and the first Framework email are on the way.</p>
-      <p class="start-note" style="font-size:0.82rem;color:var(--stone-light);margin-top:0.9rem;">Joins the free CLEARED list: the weekly Brief plus the 5-part Framework series. Unsubscribe anytime.</p>
-    </div>
-  </section>
-  <iframe name="ml_start_iframe" style="display:none" title="signup"></iframe>
-  <script>
-    (function(){
-      var f=document.getElementById('startForm'); if(!f) return;
-      f.addEventListener('submit',function(){
-        var v=(document.getElementById('startEmail').value||'').trim();
-        if(v&&v.indexOf('@')>0&&v.indexOf('.')>0){
-          setTimeout(function(){
-            f.style.display='none';
-            var n=document.querySelector('.start-note'); if(n)n.style.display='none';
-            document.getElementById('startSuccess').style.display='block';
-          },500);
-        }
-      });
-    })();
-  </script>
 
   <footer>
     <div class="container">
       <p>Strategic Health Group, LLC &middot; <a href="mailto:support@getshgllc.com">support@getshgllc.com</a></p>
-      <p>cleared.getshgllc.com</p>
+      <p style="margin-top:0.4rem;"><a href="https://cleared.getshgllc.com">cleared.getshgllc.com</a></p>
       <p class="footer-scripture">Get wisdom. Get understanding. &mdash; Prov 4:5</p>
     </div>
   </footer>
 
-
   <script>
-    // ── Sticky nav: appear after hero scroll-out ─────────────
+    // Sticky nav: appear after hero scroll-out + progress bar
     (function(){
-      const nav = document.getElementById('stickyNav');
-      const hero = document.querySelector('.hero');
-      const progress = document.getElementById('navProgress');
+      var nav = document.getElementById('stickyNav');
+      var hero = document.querySelector('.hero');
+      var progress = document.getElementById('navProgress');
       if (!nav || !hero || !progress) return;
-
       function onScroll() {
-        const heroBottom = hero.offsetTop + hero.offsetHeight;
-        if (window.scrollY > heroBottom - 80) {
-          nav.classList.add('visible');
-        } else {
-          nav.classList.remove('visible');
-        }
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+        var heroBottom = hero.offsetTop + hero.offsetHeight;
+        if (window.scrollY > heroBottom - 80) { nav.classList.add('visible'); }
+        else { nav.classList.remove('visible'); }
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
         progress.style.width = pct.toFixed(1) + '%';
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     })();
 
-    // ── Reveal on scroll: IntersectionObserver ──────────────
+    // Reveal on scroll
     (function(){
-      const targets = document.querySelectorAll('.reveal');
+      var targets = document.querySelectorAll('.reveal');
       if (!targets.length || !('IntersectionObserver' in window)) {
-        targets.forEach(t => t.classList.add('is-visible'));
+        targets.forEach(function(t){ t.classList.add('is-visible'); });
         return;
       }
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('is-visible');
-            io.unobserve(e.target);
-          }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      targets.forEach(t => io.observe(t));
+      targets.forEach(function(t){ io.observe(t); });
     })();
 
-    // ── Smooth scroll for in-page anchors ───────────────────
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function(ev) {
-        const id = this.getAttribute('href').slice(1);
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(ev){
+        var id = this.getAttribute('href').slice(1);
         if (!id) return;
-        const el = document.getElementById(id);
+        var el = document.getElementById(id);
         if (!el) return;
         ev.preventDefault();
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
