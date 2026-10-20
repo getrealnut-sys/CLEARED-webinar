@@ -134,6 +134,25 @@ td.blank { height: 2.2rem; }
  .table-wrap td{border:none !important;padding:.2rem 0 !important}
  .table-wrap td[data-label]::before{content:attr(data-label);display:block;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#BFA054;margin-top:.35rem}
 }
+
+.print-link{display:inline-block;margin-top:1rem;background:none;border:none;color:var(--stone-light);font-family:'Barlow',sans-serif;font-size:.9rem;text-decoration:underline;cursor:pointer;padding:0}
+.print-link:hover{color:var(--gold)}
+.print-only{display:none}
+@media (max-width:600px){.table-wrap tr:has(td.blank){display:none}}
+@media print{
+  .print-only{display:block !important}
+  .print-link,.cta-block,footer .footer-scripture{display:none !important}
+  .table-wrap tr:has(td.blank) td{height:2.1rem}
+  table{font-size:10pt}
+  th,td{border:1px solid #b39352 !important}
+  ul.checklist{list-style:none !important;padding-left:0}
+  ul.checklist li{padding-left:1.7rem;position:relative}
+  ul.checklist li::before{content:"" !important;position:absolute;left:0;top:.25rem;width:.85rem;height:.85rem;border:1.5px solid #1a1814 !important;background:none !important}
+  section{break-inside:auto} tr{break-inside:avoid}
+  .table-wrap{break-before:page;margin-top:0}
+  footer{display:none !important}
+  .page-date{margin-top:1rem}
+}
 </style>
 </head>
 <body>
@@ -170,12 +189,14 @@ td.blank { height: 2.2rem; }
         <li>Writing, image and social media tools</li>
       </ul>
       <p>Fill in one row per tool. Two example rows show the idea. Print this page or copy the table.</p>
+      <p class="print-only">From cleared.getshgllc.com/checklist &middot; Strategic Health Group, LLC &middot; support@getshgllc.com</p>
       <div class="table-wrap"><table>
         <tr><th>Tool</th><th>What I use it for</th><th>Touches client or patient information?</th><th>Model card or vendor answers on file?</th><th>Last checked</th></tr>
         <tr><td data-label="Tool">Example: a note-taking app</td><td data-label="What I use it for">Session summaries</td><td data-label="Touches client or patient information?">Yes</td><td data-label="Model card or vendor answers on file?">Not yet</td><td data-label="Last checked"></td></tr>
         <tr><td data-label="Tool">Example: a chatbot</td><td data-label="What I use it for">Drafting handouts</td><td data-label="Touches client or patient information?">No, if I never paste client details</td><td data-label="Model card or vendor answers on file?">Not needed yet</td><td data-label="Last checked"></td></tr>
         <tr><td data-label="Tool" class="blank"></td><td data-label="What I use it for"></td><td data-label="Touches client or patient information?"></td><td data-label="Model card or vendor answers on file?"></td><td data-label="Last checked"></td></tr><tr><td data-label="Tool" class="blank"></td><td data-label="What I use it for"></td><td data-label="Touches client or patient information?"></td><td data-label="Model card or vendor answers on file?"></td><td data-label="Last checked"></td></tr><tr><td data-label="Tool" class="blank"></td><td data-label="What I use it for"></td><td data-label="Touches client or patient information?"></td><td data-label="Model card or vendor answers on file?"></td><td data-label="Last checked"></td></tr><tr><td data-label="Tool" class="blank"></td><td data-label="What I use it for"></td><td data-label="Touches client or patient information?"></td><td data-label="Model card or vendor answers on file?"></td><td data-label="Last checked"></td></tr><tr><td data-label="Tool" class="blank"></td><td data-label="What I use it for"></td><td data-label="Touches client or patient information?"></td><td data-label="Model card or vendor answers on file?"></td><td data-label="Last checked"></td></tr>
       </table></div>
+      <button class="print-link" type="button" onclick="window.print()">Print or save the table and checklist &rarr;</button>
     </section>
 
     <section class="section">
@@ -190,11 +211,12 @@ td.blank { height: 2.2rem; }
         <li><strong>Keep a simple log.</strong> Date, tool and task, for anything AI helped produce that a client receives.</li>
         <li><strong>Put a review on your calendar.</strong> Every three months, repeat the table. Tools add AI features without asking you.</li>
       </ul>
+      <button class="print-link" type="button" onclick="window.print()">Print or save this checklist as a PDF &rarr;</button>
     </section>
 
     <div class="cta-block">
       <h3>Your next step</h3>
-      <p>Step 3: the CLEARED Self-Audit. With your list in hand, answer nine questions and see where your gaps are.</p>
+      <p>Step 3: the CLEARED Self-Audit. These seven actions cover six of the nine Self-Audit questions. The Self-Audit checks the three they don&rsquo;t: scope of practice, human review, and what to do when AI gets it wrong.</p>
       <a class="cta-btn" href="/self-audit/">Take the Self-Audit</a>
       <p class="cta-sub">If this helped, send it to a colleague who uses AI in their practice.</p>
       <p class="cta-sub">Rather have it done for you? The <a href="/install/">CLEARED Install</a> builds all of this for your practice from one working session.</p>
