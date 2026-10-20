@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Eight-Element Self-Audit | CLEARED</title>
-<meta name="description" content="A free self-audit for health practitioners. Score your AI governance against the CHAI eight-element standard, sized to a practice of one. By Strategic Health Group, LLC." />
+<title>The CLEARED Self-Audit | CLEARED</title>
+<meta name="description" content="Nine questions on how you use AI in your practice. A gap map with a first step for every gap. From CLEARED by Strategic Health Group, LLC." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
@@ -267,6 +267,22 @@
     .close-note { border-color: #c0a062; background: #faf7f0; }
     .close-note p { color: #1a1814; }
   }
+
+  .ready { margin: 3.5rem 0 1rem; padding: 2rem 1.8rem; border: 1px solid rgba(192,160,98,0.25); }
+  .ready .eyebrow { font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-size: 0.85rem; margin-bottom: 0.6rem; }
+  .ready h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.6rem; color: var(--cream); margin: 1.6rem 0 0.6rem; }
+  .ready h2:first-of-type { margin-top: 0.4rem; }
+  .ready .ready-q { font-size: 1rem; color: var(--stone-light); font-style: italic; }
+  .ready p, .ready li { color: var(--cream); margin-bottom: 0.7rem; }
+  .ready .ready-label { color: var(--stone-light); margin: 1rem 0 0.4rem; }
+  .ready blockquote { border-left: 2px solid var(--gold); padding: 0.4rem 0 0.4rem 1rem; margin: 0 0 0.8rem; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); }
+  .ready .ready-note { font-size: 0.9rem; color: var(--stone-light); }
+  .ready ol { padding-left: 1.3rem; }
+  .gap-row { flex-wrap: wrap; }
+  .gap-step { flex-basis: 100%; margin: 0.35rem 0 0 1.6rem; font-size: 0.95rem; color: var(--stone-light); }
+  .gap-step a { color: var(--gold); }
+  .close-note a, .ready a { color: var(--gold); }
+  .footnote { font-size: 0.8rem; color: var(--stone-light); max-width: 46em; margin: 0.8rem auto 0; line-height: 1.5; }
 </style>
   <link rel="canonical" href="https://cleared.getshgllc.com/self-audit/" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
@@ -275,16 +291,16 @@
 
 <div class="container">
   <section class="intro">
-    <p class="eyebrow">A CLEARED Self-Audit · Free</p>
-    <h1>The Eight-Element<br><span class="gold">Self-Audit</span></h1>
-    <p class="lede">The Coalition for Health AI wrote the governance standard for health systems. This is that standard, sized to a practice of one. Eight questions. Answer each honestly. What you get back is a gap map no consultant handed you.</p>
-    <p class="source-note">Grounded in the open-source CHAI AI Governance Playbooks (May 2026). The standard is CHAI's; the practitioner translation is CLEARED's. Read the source at <a href="https://www.chai.org" target="_blank" rel="noopener">chai.org</a>.</p>
+    <p class="eyebrow">A CLEARED Self-Audit</p>
+    <h1>The CLEARED<br><span class="gold">Self-Audit</span></h1>
+    <p class="lede">Nine questions on how you use AI in your practice. About ten minutes. What you get back is a gap map with a first step for every gap.</p>
+    <p class="source-note">Answer each one honestly: <strong>In place</strong> (written down or done), <strong>Partial</strong> (started, not solid) or <strong>Not yet</strong>. There is no score. A &ldquo;not yet&rdquo; is not a failure. It is the next thing on your list.</p>
   </section>
 </div>
 
 <div class="progress-bar">
   <div class="progress-inner">
-    <span class="progress-label"><b id="answeredCount">0</b> of 8 answered</span>
+    <span class="progress-label"><b id="answeredCount">0</b> of 9 answered</span>
     <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
   </div>
 </div>
@@ -292,12 +308,12 @@
 <div class="container">
   <section class="audit" id="audit"></section>
 
-  <p class="reveal-prompt" id="revealPrompt">Answer all eight to reveal your gap map.</p>
+  <p class="reveal-prompt" id="revealPrompt">Answer all nine to reveal your gap map.</p>
 
   <section class="results" id="results">
     <div class="results-head">
       <p class="eyebrow">Your Result</p>
-      <h2>The Eight-Element <span class="gold">Gap Map</span></h2>
+      <h2>Your <span class="gold">Gap Map</span></h2>
     </div>
 
     <div class="tally">
@@ -311,73 +327,64 @@
     <div class="close-note" id="closeNote"></div>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://cleared.getshgllc.com/cleared-assessment/" target="_blank" rel="noopener">Walk it through — Assessment $97</a>
-      <a class="btn btn-ghost" href="https://cleared.getshgllc.com/cleared-audit/" target="_blank" rel="noopener">Go deep — Audit $297</a>
+      <a class="btn btn-ghost" href="/start/">Start Where You Are &rarr;</a>
+      <a class="btn btn-ghost" href="/lexicon/">Sort your tools by risk &rarr;</a>
+      <a class="btn btn-primary" href="/install/">Have it done for you: CLEARED Install</a>
     </div>
     <div style="text-align:center;">
       <button class="print-link" onclick="window.print()">Save or print your gap map →</button>
     </div>
   </section>
+  <section class="ready" id="ready-to-use">
+    <p class="eyebrow">Ready to use</p>
+    <h2 id="disclosure">Disclosure wording <span class="ready-q">(question 6)</span></h2>
+    <p>Adapt the bracketed parts to your practice. Use the same words every time.</p>
+    <p class="ready-label">In writing, for intake paperwork or your website:</p>
+    <blockquote>I use AI tools to help with [scheduling, drafting session summaries, preparing handouts]. I review everything before it reaches you. I do not enter [your name together with your health information] into these tools. You can ask me about this at any time.</blockquote>
+    <p class="ready-label">Spoken, for a first session:</p>
+    <blockquote>I use a few AI tools to save time on [paperwork and drafts]. Nothing goes to you without my review, and your personal details stay out of them. Ask me anything about it.</blockquote>
+    <p class="ready-note">Check whether your licensing board or state has its own disclosure requirements. This wording is a starting point, not legal advice.</p>
+    <h2 id="when-wrong">When an AI tool gets it wrong <span class="ready-q">(question 8)</span></h2>
+    <ol>
+      <li><strong>Stop.</strong> Do not use or send that output any further.</li>
+      <li><strong>Check.</strong> Compare it against your own training and a trusted source.</li>
+      <li><strong>Tell.</strong> If it reached a client, correct it with them directly, in plain words.</li>
+      <li><strong>Record.</strong> Note the date, the tool, what went wrong and what you did.</li>
+      <li><strong>Adjust.</strong> Add a review step for that use, or stop using the tool for it.</li>
+    </ol>
+  </section>
+
 </div>
 
 <footer>
   <div class="container">
     <p>Strategic Health Group, LLC · <a href="mailto:support@getshgllc.com">support@getshgllc.com</a></p>
     <p style="margin-top:0.3rem;"><a href="https://cleared.getshgllc.com">cleared.getshgllc.com</a></p>
+    <p class="footnote">The CLEARED Self-Audit is CLEARED&rsquo;s own framework for practices of one. It draws on published AI governance guidance, including the Coalition for Health AI&rsquo;s governance playbooks and the original model card research, and adds what those sources do not cover for a solo practitioner: scope of practice and client disclosure. CLEARED is independent and is not affiliated with any organization cited.</p>
     <p class="footer-scripture">Get wisdom. Get understanding. — Prov 4:5</p>
   </div>
 </footer>
 
 <script>
   const ELEMENTS = [
-    {
-      n: "Element 1",
-      name: "Organizational AI Policy",
-      chai: "CHAI: a formal written AI policy with a defined scope, an owner, and clear lines on what's permitted and prohibited.",
-      q: "Do I have a written statement of what I use AI for, what I refuse to use it for, and how I decide before adopting a new tool?"
-    },
-    {
-      n: "Element 2",
-      name: "Organizational Structure",
-      chai: "CHAI: clear lines of accountability — named ownership for AI oversight, with real authority.",
-      q: "For every AI tool touching my practice, can I name the one person accountable for it?"
-    },
-    {
-      n: "Element 3",
-      name: "Organizational Resources",
-      chai: "CHAI: dedicated investment in oversight — including security basics and the means to monitor how tools perform.",
-      q: "Do I have a recurring, scheduled time to review my AI tools and their data handling?"
-    },
-    {
-      n: "Element 4",
-      name: "Responsible AI Lifecycle Management",
-      chai: "CHAI: govern every tool from vetting to retirement — including embedded and 'shadow' AI that arrives by update.",
-      q: "Do I have a current list of every AI tool touching client information, including features that arrived through updates?"
-    },
-    {
-      n: "Element 5",
-      name: "Risk and Impact Assessments",
-      chai: "CHAI: assess what could go wrong and who it affects, proportional to the stakes of each use.",
-      q: "For each AI use, have I asked who is harmed and how badly if the output is wrong?"
-    },
-    {
-      n: "Element 6",
-      name: "Responsible Data Management and Use",
-      chai: "CHAI: govern where data goes, who can reach it, and whether its use respects consent and provenance.",
-      q: "For each tool, do I know whether client data leaves my control and whether the vendor trains on it — and do my clients know?"
-    },
-    {
-      n: "Element 7",
-      name: "Third-Party Management",
-      chai: "CHAI: vet the vendors behind your AI. Their compliance covers them, not you.",
-      q: "For each AI vendor, have I read their data terms and confirmed where their responsibility ends and mine begins?"
-    },
-    {
-      n: "Element 8",
-      name: "Education, Training, and Feedback",
-      chai: "CHAI: everyone using AI knows the rules and has a channel to flag problems — governance as a living loop.",
-      q: "Does everyone who touches AI in my practice — including future me — know the rules and have a way to flag problems?"
-    }
+    { area: "Your tools", name: "Tool inventory", q: "I have a current list of every AI tool and AI feature I use, including ones added by software updates.",
+      step: 'Fill in the inventory table in the <a href="/checklist/">Beginner&rsquo;s Checklist</a>. Start with tools that see client information.' },
+    { area: "Your tools", name: "Client data and vendors", q: "For each tool that sees client information, I know whether the vendor stores it or uses it to train their AI.",
+      step: 'Find the tool&rsquo;s model card or data terms, or send the vendor the three questions on the <a href="/model-cards/">model card page</a>.' },
+    { area: "Your limits", name: "Written limits", q: "I have written down what I will and will not use AI for.",
+      step: "Write a never list: three to five things that stay out of AI, such as client names with health details." },
+    { area: "Your limits", name: "Scope of practice", q: "I check that AI output stays within my scope of practice before I use it.",
+      step: "For one week, flag any AI output that reads as a diagnosis, treatment or advice you are not credentialed to give." },
+    { area: "Your clients", name: "Human review", q: "Nothing AI produces reaches a client without my review first.",
+      step: 'Pick the AI output that reaches clients most often and add a review step before it goes out. The <a href="/lexicon/">Zone Model</a> shows which uses need it most.' },
+    { area: "Your clients", name: "Client disclosure", q: "My clients know when and how I use AI, in the same plain words every time.",
+      step: 'Adapt the <a href="#disclosure">disclosure wording</a> below and add it to your intake paperwork.' },
+    { area: "Your readiness", name: "Record of AI-assisted work", q: "I keep a record of AI-assisted work my clients receive.",
+      step: "Start a simple log: date, tool and task, only for work a client receives." },
+    { area: "Your readiness", name: "When AI gets it wrong", q: "I know what I will do if an AI tool gives a wrong or harmful answer.",
+      step: 'Copy the <a href="#when-wrong">five steps</a> below and keep them where you work.' },
+    { area: "Your readiness", name: "Scheduled review", q: "I review all of this on a set schedule.",
+      step: "Put a review on your calendar every three months." }
   ];
 
   const STATES = [
@@ -394,9 +401,7 @@
     card.className = 'card';
     card.id = 'card-' + i;
     card.innerHTML = `
-      <p class="card-num">${el.n}</p>
-      <h2>${el.name}</h2>
-      <p class="chai-line">${el.chai}</p>
+      <p class="card-num">Question ${i + 1} &middot; ${el.area}</p>
       <p class="question">${el.q}</p>
       <div class="options">
         ${STATES.map(s => `
@@ -422,8 +427,8 @@
   function update() {
     const count = Object.keys(answers).length;
     document.getElementById('answeredCount').textContent = count;
-    document.getElementById('progressFill').style.width = (count / 8 * 100) + '%';
-    if (count === 8) renderResults();
+    document.getElementById('progressFill').style.width = (count / ELEMENTS.length * 100) + '%';
+    if (count === ELEMENTS.length) renderResults();
   }
 
   function renderResults() {
@@ -443,27 +448,28 @@
       row.innerHTML = `
         <span class="gap-dot ${st}"></span>
         <span class="gap-name">${el.name}</span>
-        <span class="gap-status ${st}">${label}</span>`;
+        <span class="gap-status ${st}">${label}</span>
+        ${st !== 'in-place' ? `<p class="gap-step">First step: ${el.step}</p>` : ''}`;
       map.appendChild(row);
     });
 
     const gaps = counts['none'] + counts['partial'];
     const note = document.getElementById('closeNote');
     let lead, body;
-    if (counts['none'] === 0 && counts['partial'] === 0) {
-      lead = "Eight for eight.";
-      body = "That is rare, and it is worth documenting. Governance is not a one-time state — the standard moves and the state laws move with it. Your edge now is the recurring review that keeps this map accurate a quarter from now.";
+    if (gaps === 0) {
+      lead = "Nine for nine.";
+      body = "The rules and your tools will keep changing, so your scheduled review is what keeps this true.";
     } else if (gaps <= 3) {
       lead = `${gaps} ${gaps === 1 ? 'gap' : 'gaps'}. A short list.`;
-      body = "You are further along than most practices using AI today. The items above marked Partial or Not yet are not a verdict — they are the exact, finite list of what to close, in priority order. Start with the one whose output reaches a client.";
+      body = "Start with the gap whose output reaches a client.";
     } else {
-      lead = `${gaps} gaps. That is the map, not a failure.`;
-      body = "Most practitioners using AI have never seen this list, let alone scored against it. The fact that you can now name the gaps puts you ahead of the audit, not behind it. Take them one at a time. Element 1 — a written policy — unlocks several of the others.";
+      lead = "This is your map.";
+      body = 'Most practices using AI have never checked themselves against a list like this. Close one gap a week. Or, if you would rather have it done for you, the <a href="/install/">CLEARED Install</a> builds it for your practice from one working session.';
     }
     note.innerHTML = `
       <p class="lead">${lead}</p>
       <p>${body}</p>
-      <p>The eight items above are your gap analysis — built against the real CHAI standard, sized to your real practice. Save this. Re-run it each quarter. That cadence <em>is</em> the governance.</p>`;
+      <p>Save or print this map, and run the audit again each quarter.</p>`;
 
     document.getElementById('revealPrompt').style.display = 'none';
     const res = document.getElementById('results');

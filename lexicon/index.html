@@ -39,7 +39,7 @@
         "alternateName": "Zone Model",
         "inDefinedTermSet": "https://cleared.getshgllc.com/lexicon/#lexicon",
         "url": "https://cleared.getshgllc.com/lexicon/#zone-model",
-        "description": "A framework for sorting AI use in practice by risk exposure. Green Zone: AI use that does not touch clinical content or protected health information. Yellow Zone: AI use that touches client-facing content without generating clinical recommendations. Red Zone: AI use that intersects with PHI, clinical decisions, or content reaching clients without human review. Strategic Health Group documented the framework first."
+        "description": "A framework for sorting AI use in practice by risk exposure. Green Zone: AI use that does not touch clinical content or protected health information. Yellow Zone: AI use that touches client-facing content without generating clinical recommendations. Red Zone: AI use that intersects with PHI, clinical decisions, or content reaching clients without human review. The Red/Yellow/Green Zone Model is a CLEARED framework, first published by Strategic Health Group in March 2026."
       },
       {
         "@type": "DefinedTerm",
@@ -113,19 +113,57 @@
 
     footer { border-top: 1px solid rgba(192,160,98,0.18); margin-top: 3.5rem; padding: 2.5rem 0 3rem; text-align: center; font-size: 0.86rem; color: var(--stone-light); }
     .footer-scripture { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold); opacity: 0.75; margin-top: 1rem; }
-  </style>
+  
+.nav-links { display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: flex-end; }
+.nav-links a { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.78rem; color: var(--stone-light); text-decoration: none; }
+.nav-links a:hover, .nav-links a.nav-work { color: var(--gold); }
+.uses { border: 1px solid rgba(192,160,98,0.35); border-radius: 5px; padding: 1.4rem 1.6rem; margin: 0 0 3rem; }
+.uses p { margin: 0 0 0.5rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.78rem; color: var(--gold); }
+.uses ul { margin: 0; padding-left: 1.2rem; }
+.uses li { margin: 0.3rem 0; }
+.section { margin: 0 0 3rem; }
+.section h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(1.6rem, 3.2vw, 2.1rem); line-height: 1.15; margin: 0 0 1rem; }
+.section h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.4rem; margin: 1.6rem 0 0.6rem; }
+.section p, .section li { font-size: 1.03rem; }
+.section ul, .section ol { padding-left: 1.3rem; }
+.section li { margin: 0.45rem 0; }
+.section blockquote { border-left: 2px solid var(--gold); margin: 0.6rem 0 1rem; padding: 0.3rem 0 0.3rem 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; }
+.takeaway { border-top: 1px solid rgba(192,160,98,0.18); padding-top: 1rem; }
+.table-wrap { overflow-x: auto; margin: 1rem 0 1.4rem; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.7rem 0.8rem; border-bottom: 1px solid rgba(192,160,98,0.18); }
+th { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.76rem; color: var(--gold); }
+td.blank { height: 2.2rem; }
+.checklist { list-style: none; padding-left: 0 !important; }
+.checklist li { padding-left: 2rem; position: relative; }
+.checklist li::before { content: ''; position: absolute; left: 0; top: 0.3rem; width: 1rem; height: 1rem; border: 1px solid var(--gold); }
+.small { font-size: 0.9rem; color: var(--stone-light); }
+.sources { font-size: 0.92rem; color: var(--stone-light); }
+.sources li { margin: 0.35rem 0; }
+.page-date { font-size: 0.85rem; color: var(--stone-light); font-style: italic; margin-top: 2rem; }
+.price { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--cream); margin: 0.4rem 0 0.2rem; }
+.price s { color: var(--stone-light); font-size: 1.4rem; margin-left: 0.6rem; }
+@media print { nav, .cta-block, .nav-links { display: none !important; } body { background: #fff; color: #1a1814; } th { color: #1a1814; } }
+
+.zone-ex { display:block; font-size:0.9rem; color: var(--stone-light); margin-top:0.3rem; }
+.check { font-size: 0.95rem; }
+</style>
 </head>
 <body>
 
   <nav>
-    <div class="container">
-      <a href="../index.html" class="nav-wordmark">
-        <span class="nav-wordmark-text">CLEARED</span>
-        <span class="nav-wordmark-sub">Intelligence Brief</span>
-      </a>
-      <a href="../brief/index.html" class="nav-back">All Issues &rarr;</a>
+  <div class="container">
+    <a href="/" class="nav-wordmark">
+      <span class="nav-wordmark-text">CLEARED</span>
+      <span class="nav-wordmark-sub">Strategic Health Group</span>
+    </a>
+    <div class="nav-links">
+      <a href="/start/">Start here</a>
+      <a href="/brief/">The Brief</a>
+      <a href="/install/" class="nav-work">Work with CLEARED</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <header class="hero">
     <div class="container">
@@ -143,11 +181,19 @@
         <h2>Red/Yellow/Green Zone Model</h2>
         <p class="definition">A framework for sorting AI use in practice by risk exposure. Every tool in your practice sits in one of three zones, and the zone determines how much review the output requires before it moves.</p>
         <ul class="zone-list">
-          <li class="zone-green"><span class="zone-name">Green Zone</span>AI use that does not touch clinical content or protected health information.</li>
-          <li class="zone-yellow"><span class="zone-name">Yellow Zone</span>AI use that touches client-facing content without generating clinical recommendations.</li>
-          <li class="zone-red"><span class="zone-name">Red Zone</span>AI use that intersects with PHI, clinical decisions, or content reaching clients without human review.</li>
+          <li class="zone-green"><span class="zone-name">Green Zone: Cleared for Use</span>AI use that does not touch clinical content or protected health information.<span class="zone-ex">Examples: a transcription tool summarizing internal notes you wrote; a scheduling assistant proposing time blocks.</span></li>
+          <li class="zone-yellow"><span class="zone-name">Yellow Zone: Proceed With Guardrails</span>AI use that touches client-facing content without generating clinical recommendations.<span class="zone-ex">Examples: a drafted email going to a client after your review; a newsletter subject line written by the model.</span></li>
+          <li class="zone-red"><span class="zone-name">Red Zone: Pause and Redesign</span>AI use that intersects with PHI, clinical decisions, or content reaching clients without human review.<span class="zone-ex">Examples: a symptom summary built from intake notes; a care recap from a session transcript; a protocol suggestion.</span></li>
         </ul>
-        <p class="note">Strategic Health Group documented the framework first.</p>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.35rem;margin:1.6rem 0 0.6rem;">How to: sort your own tools</h3>
+        <p class="note" style="color:var(--cream);">Ask one question of each AI use: if this output is wrong, who is harmed, and how badly?</p>
+        <ol class="note" style="color:var(--cream);padding-left:1.3rem;">
+          <li>Does it touch client information or clinical content? If not, it is <strong>Green</strong>.</li>
+          <li>Does its output reach a client, without a clinical recommendation? It is <strong>Yellow</strong>. Add a review step before it goes out.</li>
+          <li>Does it touch protected health information or a clinical decision, or reach a client without your review? It is <strong>Red</strong>. Pause that use and redesign it.</li>
+        </ol>
+        <p class="note">Start with the tools on your <a href="/checklist/">Beginner&rsquo;s Checklist</a> inventory. Sort the ones that touch client information first.</p>
+        <p class="note"><em>The Red/Yellow/Green Zone Model is a CLEARED framework, first published by Strategic Health Group in March 2026.</em></p>
       </article>
 
       <article class="term" id="human-authority-filter">
@@ -155,6 +201,7 @@
         <h2>Human Authority Filter</h2>
         <p class="definition">The principle that no AI output reaches a client without a credentialed human review checkpoint.</p>
         <p class="note">The Filter is not a tool. It is the practice you build around your AI use to keep the practitioner accountable for what reaches the client.</p>
+        <p class="note check"><strong>Check yourself:</strong> <a href="/self-audit/">Self-Audit</a> question 5.</p>
       </article>
 
       <article class="term" id="documentation-discipline">
@@ -162,18 +209,18 @@
         <h2>Documentation Discipline</h2>
         <p class="definition">The practice of recording what came from the AI tool, what came from your training, and what synthesis happened in between.</p>
         <p class="note">It is the documentation standard that survives a five-year audit because it shows the human reasoning behind every output.</p>
+        <p class="note check"><strong>Check yourself:</strong> <a href="/self-audit/">Self-Audit</a> question 7.</p>
       </article>
 
       <div class="cta-block">
         <h3>Where does your practice actually stand?</h3>
-        <p>The Eight-Element Self-Audit takes the governance standard written for health systems and sizes it to a practice of one. Eight questions. What you get back is a gap map no consultant handed you.</p>
-        <a class="cta-btn" href="../self-audit/index.html">Take the Self-Audit</a>
-        <p class="cta-sub">Free. Answering it also subscribes you to the CLEARED Intelligence Brief, the practitioner's briefing on AI governance for solo and small health practices.</p>
+        <p>The CLEARED Self-Audit puts these terms to work. Nine questions, about ten minutes, and a gap map with a first step for every gap.</p>
+        <a class="cta-btn" href="/self-audit/">Take the CLEARED Self-Audit</a>
       </div>
 
       <div class="provenance">
         <h3>On this vocabulary</h3>
-        <p>These terms are used consistently across the CLEARED Intelligence Brief, the CLEARED Assessment, and the AI Workflow Audit. They are working definitions from practice, not regulatory categories. Where a state law or a certification body uses a term differently, the Brief tracks the difference weekly.</p>
+        <p>These terms are used consistently across the CLEARED Intelligence Brief and the CLEARED Install. They are working definitions from practice, not regulatory categories. Where a state law or a certification body uses a term differently, the Brief tracks the difference weekly.</p>
       </div>
 
     </div>
@@ -182,8 +229,9 @@
   <footer>
     <div class="container">
       <p>Strategic Health Group, LLC &middot; <a href="mailto:support@getshgllc.com">support@getshgllc.com</a></p>
-      <p><a href="../index.html">cleared.getshgllc.com</a></p>
-      <p class="footer-scripture">Get wisdom. Get understanding. &mdash; Prov 4:5</p>
+      <p><a href="/">cleared.getshgllc.com</a></p>
+      <p class="page-date">Revised October 2026.</p>
+    <p class="footer-scripture">Get wisdom. Get understanding. &mdash; Prov 4:5</p>
     </div>
   </footer>
 
