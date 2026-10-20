@@ -55,7 +55,7 @@
         "name": "Documentation Discipline",
         "inDefinedTermSet": "https://cleared.getshgllc.com/lexicon/#lexicon",
         "url": "https://cleared.getshgllc.com/lexicon/#documentation-discipline",
-        "description": "The practice of recording what came from the AI tool, what came from your training, and what synthesis happened in between. It is the documentation standard that survives a five-year audit because it shows the human reasoning behind every output."
+        "description": "The practice of recording what came from the AI tool, what came from your training, and what synthesis happened in between. It is the documentation standard that holds up under review, because it shows the human reasoning behind every output."
       }
     ]
   }
@@ -182,6 +182,8 @@ td.blank { height: 2.2rem; }
  .table-wrap td{border:none !important;padding:.2rem 0 !important}
  .table-wrap td[data-label]::before{content:attr(data-label);display:block;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#BFA054;margin-top:.35rem}
 }
+
+@media (max-width:720px){.site-nav .links{-webkit-mask-image:linear-gradient(to right,#000 80%,transparent);mask-image:linear-gradient(to right,#000 80%,transparent)}.site-nav .links.at-end{-webkit-mask-image:none;mask-image:none}}
 </style>
 </head>
 <body>
@@ -238,7 +240,7 @@ td.blank { height: 2.2rem; }
         <p class="term-label">Term 03</p>
         <h2>Documentation Discipline</h2>
         <p class="definition">The practice of recording what came from the AI tool, what came from your training, and what synthesis happened in between.</p>
-        <p class="note">It is the documentation standard that survives a five-year audit because it shows the human reasoning behind every output.</p>
+        <p class="note">It is the documentation standard that holds up under review, because it shows the human reasoning behind every output.</p>
         <p class="note">Begin with the simple log on the <a href="/checklist/">Beginner&rsquo;s Checklist</a>: date, tool and task. Then build toward the full standard: what came from the AI, what came from you, and how you combined them.</p>
         <p class="note check"><strong>Check yourself:</strong> <a href="/self-audit/">Self-Audit</a> question 7.</p>
       </article>
@@ -270,5 +272,6 @@ td.blank { height: 2.2rem; }
 (function(){var b=document.getElementById('navBar');if(!b)return;function f(){var h=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(h>0?Math.min(100,window.scrollY/h*100):0).toFixed(1)+'%';}
 window.addEventListener('scroll',f,{passive:true});window.addEventListener('resize',f);f();})();
 </script>
+<script>(function(){var l=document.querySelector('.site-nav .links');if(!l)return;function f(){l.classList.toggle('at-end',l.scrollLeft+l.clientWidth>=l.scrollWidth-4)}l.addEventListener('scroll',f,{passive:true});window.addEventListener('resize',f);f();var c=l.querySelector('[aria-current]');if(c&&window.innerWidth<=720){l.scrollLeft=Math.max(0,c.offsetLeft-l.clientWidth/3);f()}})();</script>
 </body>
 </html>
