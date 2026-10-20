@@ -99,21 +99,50 @@ td.blank { height: 2.2rem; }
 .price { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--cream); margin: 0.4rem 0 0.2rem; }
 .price s { color: var(--stone-light); font-size: 1.4rem; margin-left: 0.6rem; }
 @media print { nav, .cta-block, .nav-links { display: none !important; } body { background: #fff; color: #1a1814; } th { color: #1a1814; } }
+
+/* ---- site nav (2026-10-20) ---- */
+.site-nav{position:sticky;top:0;z-index:60;background:rgba(26,24,20,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(192,160,98,.18)}
+.site-nav .nav-row{max-width:1100px;margin:0 auto;padding:.75rem 1.5rem;display:flex;align-items:center;gap:1.5rem}
+.site-nav .brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1;flex-shrink:0}
+.site-nav .brand b{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.22em;font-size:1rem;color:#c0a062}
+.site-nav .brand small{font-family:'Barlow Condensed',sans-serif;font-weight:500;letter-spacing:.16em;text-transform:uppercase;font-size:.62rem;color:#a89f8e}
+.site-nav .links{display:flex;gap:1.15rem;margin-left:auto;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.site-nav .links::-webkit-scrollbar{display:none}
+.site-nav .links a{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.76rem;color:#a89f8e;text-decoration:none;padding:.25rem 0;border-bottom:1px solid transparent}
+.site-nav .links a:hover{color:#f5f0e6}
+.site-nav .links a[aria-current="page"]{color:#f5f0e6;border-bottom-color:#c0a062}
+.site-nav .links a.work{color:#c0a062}
+.site-nav .bar{height:2px;width:0;background:#c0a062;transition:width .1s linear}
+.steps{max-width:780px;margin:1.8rem auto 0;padding:0 1.5rem;display:flex;flex-wrap:wrap;gap:.45rem;justify-content:center}
+.steps span{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:#a89f8e;align-self:center;margin-right:.3rem}
+.steps a{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;color:#a89f8e;text-decoration:none;border:1px solid rgba(192,160,98,.3);padding:.35rem .7rem}
+.steps a:hover{color:#f5f0e6;border-color:#c0a062}
+.steps a.on{background:#c0a062;color:#1a1814;border-color:#c0a062}
+@media (max-width:720px){.site-nav .nav-row{flex-wrap:wrap;gap:.35rem}.site-nav .links{margin-left:0;width:100%}}
+@media print{
+  *{color:#1a1814 !important;background:transparent !important;box-shadow:none !important;text-shadow:none !important;opacity:1 !important;transform:none !important;filter:none !important}
+  body{background:#fff !important;background-image:none !important}
+  a{text-decoration:underline !important}
+  .site-nav,.steps,.no-print{display:none !important}
+  blockquote,.ready,.close-note,.cta-block,.uses,th,td,.gap-row{border-color:#b39352 !important}
+}
+
+@media (max-width:600px){
+ .table-wrap table,.table-wrap tbody,.table-wrap tr,.table-wrap td{display:block;width:100%}
+ .table-wrap tr:first-child:has(th){display:none}
+ .table-wrap tr{padding:.9rem 0;border-bottom:1px solid rgba(191,160,84,.25)}
+ .table-wrap td{border:none !important;padding:.2rem 0 !important}
+ .table-wrap td[data-label]::before{content:attr(data-label);display:block;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#BFA054;margin-top:.35rem}
+}
 </style>
 </head>
 <body>
-<nav>
-  <div class="container">
-    <a href="/" class="nav-wordmark">
-      <span class="nav-wordmark-text">CLEARED</span>
-      <span class="nav-wordmark-sub">Strategic Health Group</span>
-    </a>
-    <div class="nav-links">
-      <a href="/start/">Start here</a>
-      <a href="/brief/">The Brief</a>
-      <a href="/install/" class="nav-work">Work with CLEARED</a>
-    </div>
+<nav class="site-nav" aria-label="CLEARED">
+  <div class="nav-row">
+    <a href="/" class="brand"><b>CLEARED</b><small>Strategic Health Group</small></a>
+    <div class="links"><a href="/start/">Start here</a><a href="/model-cards/" aria-current="page">Model Cards</a><a href="/checklist/">Checklist</a><a href="/self-audit/">Self-Audit</a><a href="/lexicon/">Lexicon</a><a href="/brief/">The Brief</a><a href="/install/" class="work">Work with CLEARED</a></div>
   </div>
+  <div class="bar" id="navBar"></div>
 </nav>
 <header class="hero">
   <div class="container">
@@ -122,6 +151,7 @@ td.blank { height: 2.2rem; }
     <p class="lede">The document to ask for before client information goes into an AI tool, and how to read it without a compliance department.</p>
   </div>
 </header>
+<div class="steps"><span>Start where you are</span><a href="/model-cards/" class="on" aria-current="step">1 Model Cards</a><a href="/checklist/">2 Checklist</a><a href="/self-audit/">3 Self-Audit</a><a href="/lexicon/">4 Lexicon</a><a href="/brief/">5 The Brief</a></div>
 <main>
   <div class="container">
     <div class="uses"><p>Use this page to</p><ul>
@@ -205,5 +235,9 @@ td.blank { height: 2.2rem; }
     <p class="footer-scripture">Get wisdom. Get understanding. &mdash; Prov 4:5</p>
   </div>
 </footer>
+<script>
+(function(){var b=document.getElementById('navBar');if(!b)return;function f(){var h=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(h>0?Math.min(100,window.scrollY/h*100):0).toFixed(1)+'%';}
+window.addEventListener('scroll',f,{passive:true});window.addEventListener('resize',f);f();})();
+</script>
 </body>
 </html>
